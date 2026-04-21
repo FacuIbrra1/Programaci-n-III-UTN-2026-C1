@@ -1,0 +1,80 @@
+<!--
+  @file        clase01_09.html
+  @description Estructura semántica completa de un documento HTML5:
+               uso correcto de <header>, <nav>, <main>, <section>,
+               <article>, <aside> y <footer> como landmarks de accesibilidad.
+  @subject     Programación III – UTN
+  @topic       Clase 01 – Introducción a HTML5
+  @author      UTN-FRA
+  @version     1.0.0
+  @since       2026
+-->
+<!DOCTYPE html>
+<html lang="es">  
+    <head>    
+        <title>Estructura Semántica HTML5</title>    
+        <!-- Codificación de caracteres: permite el uso de tildes y ñ -->
+        <meta charset="UTF-8">
+        <!-- Viewport responsivo: ajusta el ancho al dispositivo con zoom inicial 1:1 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Descripción breve del documento; utilizada por motores de búsqueda (SEO) -->
+        <meta name="description" content="Ejemplo de estructura semántica completa con HTML5">
+    </head>  
+    <body>    
+        <!-- ==================== ENCABEZADO DEL DOCUMENTO ==================== -->
+        <!-- header: landmark de encabezado; contiene el h1 y la navegación   -->
+        <header>
+            <h1>Estructura Semántica HTML5</h1>
+            <nav>
+                <ul>
+                    <li><a href="./index.html">Índice</a></li>
+                    <li><a href="./clase01_01.html">Introducción a HTML5</a></li>
+                    <li><a href="./clase01_02.html">Formatos de Texto</a></li>
+                    <li><a href="./clase01_03.html">Imágenes</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- ========================= CONTENIDO PRINCIPAL ========================= -->
+        <!-- main: landmark de contenido único de la página; solo uno por doc -->
+        <main>
+            <!--
+              section: agrupa contenido temáticamente relacionado.
+              article: bloque de contenido independiente y reutilizable
+                       (puede extraerse sin perder su significado).
+            -->
+            <section>
+                <article>
+                    <h2>Contenido principal</h2>
+                    <p>
+                        El elemento &lt;article&gt; representa un bloque de contenido independiente y reutilizable,
+                        como una entrada de blog, una noticia o un tutorial.
+                    </p>
+                    <p>
+                        El elemento &lt;section&gt; agrupa contenido temáticamente relacionado dentro de la página.
+                        Se recomienda que cada &lt;section&gt; tenga su propio encabezado.
+                    </p>
+                </article>
+            </section>
+            <!-- aside: contenido tangencialmente relacionado al principal -->
+            <!-- En un layout de dos columnas, suele ubicarse como barra lateral -->
+            <aside>
+                <h2>Información relacionada</h2>
+                <p>
+                    El elemento &lt;aside&gt; contiene información complementaria al contenido principal,
+                    como testimonios, enlaces relacionados o publicidad.
+                </p>
+                <p><em>"Aprender HTML5 semántico mejora la accesibilidad y el SEO de cualquier sitio web."</em></p>
+            </aside>
+        </main>
+        <!-- ========================= PIE DE PÁGINA ========================= -->
+        <!-- footer: landmark de pie; contiene metadatos, créditos y enlaces -->
+        <footer>
+            <h2>Redes sociales</h2>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+            </ul>
+            <p>Derechos reservados &copy; 2024 &mdash; UTN</p>
+        </footer>
+    </body>  
+</html>

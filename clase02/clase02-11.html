@@ -1,0 +1,67 @@
+<!--
+  @file        clase02-11.html
+  @description Animaciones en CSS3: página contenedora que presenta dos
+               ejemplos de animación mediante iframes. Ver animacion1.html
+               (uso de @keyframes con shorthand) y animacion2.html
+               (propiedades individuales de animation-*).
+  @subject     Programación III – UTN
+  @topic       Clase 02 – Introducción a CSS
+  @author      UTN-FRA
+  @version     1.0.0
+  @since       2026
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Codificación de caracteres: permite el uso de tildes y ñ -->
+    <meta charset="UTF-8">
+    <!-- Viewport responsivo: ajusta el ancho al dispositivo con zoom inicial 1:1 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS – Animaciones</title>
+    <!-- Ícono de la pestaña del navegador -->
+    <link href="./img/utnLogo.png" rel="icon" type="image/png" />
+</head>
+<body>
+    <!-- ==================== ENCABEZADO DEL DOCUMENTO ==================== -->
+    <header>
+        <h1>Animaciones en CSS3</h1>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Índice</a></li>
+                <li><a href="./clase02-10.html">Bordes Redondeados</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- ========================= CONTENIDO PRINCIPAL ========================= -->
+    <main>
+        <section>
+            <h2>¿Qué son las animaciones CSS?</h2>
+            <p>Las animaciones CSS permiten transicionar propiedades de un estado a otro usando <code>@keyframes</code> y la propiedad <code>animation</code>, sin necesidad de JavaScript.</p>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Ejemplo 1 – Sintaxis abreviada (<code>animation</code>)</h2>
+            <p>Usa la propiedad abreviada <code>animation</code> para definir nombre, duración, función de tiempo, retardo, iteraciones y dirección en una sola línea.</p>
+            <!-- iframe incrusta animacion1.html que demuestra @keyframes con shorthand -->
+            <iframe src="animacion1.html" height="550px" width="650px"
+                title="Animación CSS – sintaxis abreviada"></iframe>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Ejemplo 2 – Propiedades individuales (<code>animation-*</code>)</h2>
+            <p>Usa las propiedades individuales: <code>animation-name</code>, <code>animation-duration</code>, <code>animation-timing-function</code>, <code>animation-delay</code>, <code>animation-iteration-count</code> y <code>animation-direction</code>.</p>
+            <!-- iframe incrusta animacion2.html que demuestra propiedades individuales -->
+            <iframe src="animacion2.html" height="550px" width="650px"
+                title="Animación CSS – propiedades individuales"></iframe>
+        </section>
+    </main>
+    <!-- ========================= PIE DE PÁGINA ========================= -->
+    <footer>
+        <p>Derechos reservados &copy; 2026 &mdash; UTN</p>
+    </footer>
+</body>
+</html>

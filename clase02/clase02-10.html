@@ -1,0 +1,161 @@
+<!--
+  @file        clase02-10.html
+  @description Bordes redondeados en CSS3: propiedad border-radius aplicada
+               a elementos con fondo de color, borde y fondo de imagen.
+               Demostración con contenedores rectangulares y formas circulares.
+  @subject     Programación III – UTN
+  @topic       Clase 02 – Introducción a CSS
+  @author      UTN-FRA
+  @version     1.0.0
+  @since       2026
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Codificación de caracteres: permite el uso de tildes y ñ -->
+    <meta charset="UTF-8">
+    <!-- Viewport responsivo: ajusta el ancho al dispositivo con zoom inicial 1:1 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS – Bordes Redondeados</title>
+    <!-- Ícono de la pestaña del navegador -->
+    <link href="./img/utnLogo.png" rel="icon" type="image/png" />
+    <!-- Hoja externa con estilos de contenedor de columnas (float + clearfix) -->
+    <link type="text/css" rel="stylesheet" href="CSS/Estilos-contenedores.css" />
+
+    <style type="text/css">
+        /*
+          Rectángulo redondeado con fondo de color.
+          border-radius: 25px redondea las cuatro esquinas por igual.
+        */
+        #corner1 {
+          border-radius: 25px;
+          background: #73AD21;
+          padding: 20px;
+          width: 200px;
+          height: 150px;
+        }
+
+        /*
+          Rectángulo redondeado con borde visible (sin fondo).
+          Combina border-radius con border para mostrar solo el contorno.
+        */
+        #corner2 {
+          border-radius: 25px;
+          border: 2px solid #73AD21;
+          padding: 20px;
+          width: 200px;
+          height: 150px;
+        }
+
+        /*
+          Rectángulo redondeado con imagen de fondo.
+          background-repeat: round escala la imagen para que quepa exactamente.
+        */
+        #corner3 {
+          border-radius: 25px;
+          background: url("img/coronavirus.jpg");
+          background-position: left top;
+          background-repeat: round;
+          padding: 20px;
+          width: 200px;
+          height: 150px;
+        }
+
+        /*
+          Círculo: border-radius igual a la mitad del ancho/alto del elemento.
+          Con width = height = 200px y border-radius = 95px se obtiene un círculo.
+        */
+        h2 {
+          border-radius: 95px;
+          padding: 20px;
+          width: 200px;
+          height: 200px;
+          text-align: center;
+        }
+
+        /* Círculo con fondo de color sólido */
+        h2.fondo {
+          background: seagreen;
+        }
+
+        /* Círculo con solo borde visible */
+        h2.borde {
+          border: 2px solid rgb(235, 37, 169);
+        }
+
+        /* Círculo con imagen de fondo */
+        h2.imagen {
+          background: url("img/coronavirus2.jpg");
+          background-repeat: round;
+        }
+    </style>
+</head>
+<body>
+    <!-- ==================== ENCABEZADO DEL DOCUMENTO ==================== -->
+    <header>
+        <h1>Bordes Redondeados en CSS3</h1>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Índice</a></li>
+                <li><a href="./clase02-09.html">Colores CSS</a></li>
+                <li><a href="./clase02-11.html">Animaciones CSS</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- ========================= CONTENIDO PRINCIPAL ========================= -->
+    <main>
+        <!-- Sección 1: rectángulos con esquinas redondeadas -->
+        <section>
+            <h2>Rectángulos con <code>border-radius</code></h2>
+            <p>La propiedad <strong>border-radius</strong> redondea las esquinas de un elemento. Funciona con fondo de color, borde o imagen de fondo.</p>
+            <!-- clearfix contiene los tres contenedores flotantes -->
+            <div class="clearfix">
+                <!-- Rectángulo con fondo de color -->
+                <div class="container">
+                    <p>Con color de fondo:</p>
+                    <p id="corner1">Esquinas redondeadas</p>
+                </div>
+                <!-- Rectángulo con borde visible -->
+                <div class="container">
+                    <p>Con color de borde:</p>
+                    <p id="corner2">Esquinas redondeadas</p>
+                </div>
+                <!-- Rectángulo con imagen de fondo -->
+                <div class="container">
+                    <p>Con imagen de fondo:</p>
+                    <p id="corner3"></p>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- Sección 2: círculo con border-radius = 50% del tamaño -->
+        <section>
+            <h2>Círculos con <code>border-radius</code> elevado</h2>
+            <p>Cuando <strong>border-radius</strong> iguala la mitad del ancho y del alto, el elemento toma forma circular.</p>
+            <div class="clearfix">
+                <!-- Círculo con fondo de color -->
+                <div class="container">
+                    <p>Con color de fondo:</p>
+                    <h2 class="fondo">Círculo</h2>
+                </div>
+                <!-- Círculo con borde visible -->
+                <div class="container">
+                    <p>Con color de borde:</p>
+                    <h2 class="borde">Círculo</h2>
+                </div>
+                <!-- Círculo con imagen de fondo -->
+                <div class="container">
+                    <p>Con imagen de fondo:</p>
+                    <h2 class="imagen"></h2>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- ========================= PIE DE PÁGINA ========================= -->
+    <footer>
+        <p>Derechos reservados &copy; 2026 &mdash; UTN</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!--
+  @file        clase02-04.html
+  @description Combinación de clases CSS: clase ligada a un elemento (p.centrado)
+               y clase genérica (.grande). Demostración de cómo múltiples clases
+               pueden aplicarse simultáneamente sobre un mismo elemento.
+  @subject     Programación III – UTN
+  @topic       Clase 02 – Introducción a CSS
+  @author      UTN-FRA
+  @version     1.0.0
+  @since       2026
+-->
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<!-- Codificación de caracteres: permite el uso de tildes y ñ -->
+		<meta charset="UTF-8">
+		<!-- Viewport responsivo: ajusta el ancho al dispositivo con zoom inicial 1:1 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>CSS – Combinando Clases</title>
+		<!-- Ícono de la pestaña del navegador -->
+		<link href="./img/utnLogo.png" rel="icon" type="image/png" />
+
+		<style type="text/css">
+			/*
+			  Clase ligada a elemento: p.centrado
+			  Solo afecta a los <p> con class="centrado".
+			  Un <h1 class="centrado"> NO será afectado.
+			*/
+			p.centrado {
+			  text-align: center;
+			  color: red;
+			}
+
+			/*
+			  Clase genérica: .grande
+			  Puede aplicarse a cualquier elemento HTML.
+			*/
+			.grande {
+			  font-size: 300%;
+			  color:coral;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- ==================== ENCABEZADO DEL DOCUMENTO ==================== -->
+		<header>
+			<h1>Combinando Clases CSS</h1>
+			<nav>
+				<ul>
+					<li><a href="./index.html">Índice</a></li>
+					<li><a href="./clase02-03.html">ID y Pseudoclases</a></li>
+					<li><a href="./clase02-05.html">Selectores Descendentes</a></li>
+				</ul>
+			</nav>
+		</header>
+		<!-- ========================= CONTENIDO PRINCIPAL ========================= -->
+		<main>
+			<!-- Sección 1: clase ligada a elemento – el h1 no es afectado por p.centrado -->
+			<section>
+				<h2>Clase ligada a elemento <code>p.centrado</code></h2>
+				<p>El selector <strong>p.centrado</strong> solo aplica a párrafos. Un <code>&lt;h1&gt;</code> con la misma clase no es afectado.</p>
+				<!-- h1 con class="centrado": no recibe el estilo de p.centrado -->
+				<h1 class="centrado">El encabezado no es afectado por p.centrado</h1>
+				<!-- p con class="centrado": sí recibe el estilo -->
+				<p class="centrado">Este párrafo será rojo y con texto centrado.</p>
+			</section>
+
+			<hr>
+
+			<!-- Sección 2: clase genérica aplicada a un párrafo -->
+			<section>
+				<h2>Clase genérica <code>.grande</code></h2>
+				<p>La clase <strong>.grande</strong> puede aplicarse a cualquier elemento HTML y acumula sus propiedades con otras clases.</p>
+				<p class="grande">Este párrafo tiene letras grandes por la clase .grande.</p>
+			</section>
+
+			<hr>
+
+			<!-- Sección 3: múltiples clases en un mismo elemento -->
+			<!-- Se separan por espacio en el atributo class: class="clase1 clase2" -->
+			<section>
+				<h2>Múltiples clases en un elemento</h2>
+				<p>Un elemento puede tener varias clases separadas por espacio. Recibe las propiedades de todas ellas.</p>
+				<p class="centrado grande">Este párrafo combina <strong>centrado</strong> y <strong>grande</strong>: es rojo, centrado y de letras grandes.</p>
+			</section>
+		</main>
+		<!-- ========================= PIE DE PÁGINA ========================= -->
+		<footer>
+			<p>Derechos reservados &copy; 2026 &mdash; UTN</p>
+		</footer>
+	</body>
+</html>

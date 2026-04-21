@@ -1,0 +1,92 @@
+<!--
+  @file        clase01_08.html
+  @description Tags semánticos de formato en HTML5: diferencias entre
+               <b>/<strong>, <i>/<em>, y uso de <mark>, <del>, <ins>,
+               <code>, <sub>, <sup> y <abbr>. Incluye ejemplos de
+               metaetiquetas de documentación en el <head>.
+  @subject     Programación III – UTN
+  @topic       Clase 01 – Introducción a HTML5
+  @author      UTN-FRA
+  @version     1.0.0
+  @since       2026
+-->
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- Codificación de caracteres: permite el uso de tildes y ñ -->
+        <meta charset="UTF-8">
+        <!--
+          Viewport responsivo:
+          - width=device-width  : el ancho del viewport iguala al del dispositivo
+          - initial-scale=1.0   : zoom inicial al 100% (sin zoom aplicado)
+        -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Nombre de la aplicación a la que pertenece este documento -->
+        <meta name="application-name" content="Introducción a HTML 5">
+        <!-- Autor o equipo responsable del contenido del documento -->
+        <meta name="author" content="UTN-FRA">
+        <!-- Descripción breve del documento; utilizada por motores de búsqueda (SEO) -->
+        <meta name="description" content="Ejemplos de tags semánticos en HTML5">
+        <!--
+          keywords: palabras clave separadas por coma para clasificación en buscadores.
+          Su impacto en SEO moderno es mínimo, pero se mantiene por compatibilidad.
+        -->
+        <meta name="keywords" content="ejemplos, programación, html5, tags semánticos">
+
+        <title>Tags Semánticos</title>
+    </head>
+    <body>
+        <!-- ==================== ENCABEZADO DEL DOCUMENTO ==================== -->
+        <header>
+            <h1>Tags Semánticos en HTML5</h1>
+            <nav>
+                <ul>
+                    <li><a href="./index.html">Índice</a></li>
+                    <li><a href="./clase01_07.html">DIVs y SPANs</a></li>
+                    <li><a href="./clase01_09.html">Estructura Semántica</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- ========================= CONTENIDO PRINCIPAL ========================= -->
+        <main>
+            <!-- Sección 1: diferencia visual vs. semántica entre <b> y <strong> -->
+            <section>
+                <h2>Negrita: &lt;b&gt; vs &lt;strong&gt;</h2>
+                <p>
+                    El tag &lt;b&gt; coloca texto en <b>negrita</b> solo visualmente.
+                    El tag &lt;strong&gt; además lo hace <strong>destacar semánticamente</strong>,
+                    indicando que ese contenido tiene mayor importancia para los buscadores y lectores de pantalla.
+                </p>
+            </section>
+
+            <hr>
+
+            <!-- Sección 2: diferencia visual vs. semántica entre <i> y <em> -->
+            <section>
+                <h2>Cursiva: &lt;i&gt; vs &lt;em&gt;</h2>
+                <p>
+                    Lo mismo ocurre con &lt;i&gt; y &lt;em&gt;: ambos colocan el texto en cursiva,
+                    pero <em>em</em> es semántico y transmite <i>énfasis</i> al contenido.
+                </p>
+            </section>
+
+            <hr>
+
+            <!-- Sección 3: otros elementos de formato semántico de HTML5 -->
+            <section>
+                <h2>Otros tags de formato semántico</h2>
+                <p>El tag &lt;mark&gt; resalta texto: <mark>texto destacado</mark>.</p>
+                <p>El tag &lt;del&gt; indica texto eliminado: <del>texto eliminado</del>.</p>
+                <p>El tag &lt;ins&gt; indica texto insertado: <ins>texto insertado</ins>.</p>
+                <p>El tag &lt;code&gt; representa código: <code>console.log("hola")</code>.</p>
+                <p>El tag &lt;sub&gt; produce subíndice: H<sub>2</sub>O.</p>
+                <p>El tag &lt;sup&gt; produce superíndice: x<sup>2</sup>.</p>
+                <p>El tag &lt;abbr&gt; define abreviaciones: <abbr title="HyperText Markup Language">HTML</abbr>.</p>
+            </section>
+        </main>
+        <!-- ========================= PIE DE PÁGINA ========================= -->
+        <footer>
+            <p>Derechos reservados &copy; 2024 &mdash; UTN</p>
+        </footer>
+    </body>
+</html>

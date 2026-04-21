@@ -1,0 +1,93 @@
+<!--
+  @file        clase02-03.html
+  @description Selectores de ID y pseudoclases en CSS: selector #id para
+               estilos únicos, pseudoclases de enlace (:link, :visited,
+               :hover, :active) y pseudoelementos (:first-line, :first-letter).
+  @subject     Programación III – UTN
+  @topic       Clase 02 – Introducción a CSS
+  @author      UTN-FRA
+  @version     1.0.0
+  @since       2026
+-->
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<!-- Codificación de caracteres: permite el uso de tildes y ñ -->
+		<meta charset="UTF-8">
+		<!-- Viewport responsivo: ajusta el ancho al dispositivo con zoom inicial 1:1 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>CSS – ID y Pseudoclases</title>
+		<!-- Ícono de la pestaña del navegador -->
+		<link href="./img/utnLogo.png" rel="icon" type="image/png" />
+		<!-- Hoja de estilos con selectores #id, pseudoclases y pseudoelementos -->
+		<link type="text/css" rel="stylesheet" href="CSS/EstilosID-Pseudo.css" />
+	</head>
+	<body>
+		<!-- ==================== ENCABEZADO DEL DOCUMENTO ==================== -->
+		<header>
+			<h1>Selectores de ID y Pseudoclases</h1>
+			<nav>
+				<ul>
+					<li><a href="./index.html">Índice</a></li>
+					<li><a href="./clase02-02.html">Clases CSS</a></li>
+					<li><a href="./clase02-04.html">Combinando Clases</a></li>
+				</ul>
+			</nav>
+		</header>
+		<!-- ========================= CONTENIDO PRINCIPAL ========================= -->
+		<main>
+			<!-- Sección 1: selector de ID (#id_unico) -->
+			<!-- Un ID debe ser único en toda la página; no puede repetirse -->
+			<section>
+				<h2>Selector de ID – <code>#id_unico</code></h2>
+				<p>El selector <strong>#id</strong> aplica estilos a un único elemento identificado por su atributo <strong>id</strong>.</p>
+				<div id="id_unico">
+					Este div posee un estilo único definido con el selector <strong>#id_unico</strong>.
+				</div>
+			</section>
+
+			<hr>
+
+			<!-- Sección 2: pseudoclases de enlace -->
+			<!-- :link → no visitado | :visited → visitado | :hover → mouse encima | :active → clic activo -->
+			<section>
+				<h2>Pseudoclases de enlace</h2>
+				<p>Las pseudoclases permiten estilizar un elemento según su estado. Para enlaces se usan: <code>:link</code>, <code>:visited</code>, <code>:hover</code> y <code>:active</code>.</p>
+				<!-- id reemplaza al atributo name (deprecado en HTML5) -->
+				<p><a id="marcador" href="#">Este enlace no es azul (pseudoclase :link aplicada)</a></p>
+			</section>
+
+			<hr>
+
+			<!-- Sección 3: pseudoelementos :first-line y :first-letter -->
+			<!-- :first-line → estiliza la primera línea de un párrafo      -->
+			<!-- :first-letter → estiliza la primera letra (efecto capitular) -->
+			<section>
+				<h2>Pseudoelementos – <code>:first-line</code> y <code>:first-letter</code></h2>
+				<p>Los pseudoelementos permiten estilizar partes específicas del contenido sin agregar elementos HTML extra.</p>
+				<div class="claseDiv">
+					<p>
+						El término AJAX se presentó por primera vez en el artículo "Ajax: A New Approach to Web Applications"
+						publicado por Jesse James Garrett el 18 de Febrero de 2005. Hasta ese momento, no existía un término
+						normalizado que hiciera referencia a un nuevo tipo de aplicación web que estaba apareciendo.
+					</p>
+					<p>
+						En las aplicaciones web tradicionales, las acciones del usuario en la página (pinchar en un botón,
+						seleccionar un valor de una lista, etc.) desencadenan llamadas al servidor. Una vez procesada la
+						petición del usuario, el servidor devuelve una nueva página HTML al navegador del usuario.
+					</p>
+					<p>
+						Esta técnica tradicional para crear aplicaciones web funciona correctamente, pero no crea una buena
+						sensación al usuario. AJAX permite mejorar completamente la interacción del usuario con la aplicación,
+						evitando las recargas constantes de la página, ya que el intercambio de información con el servidor
+						se produce en un segundo plano.
+					</p>
+				</div>
+			</section>
+		</main>
+		<!-- ========================= PIE DE PÁGINA ========================= -->
+		<footer>
+			<p>Derechos reservados &copy; 2026 &mdash; UTN</p>
+		</footer>
+	</body>
+</html>

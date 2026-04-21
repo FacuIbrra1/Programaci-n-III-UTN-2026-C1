@@ -1,0 +1,145 @@
+<!--
+  @file        clase02-08.html
+  @description Modelo de caja flexible (Flexbox) en CSS3: propiedad display:flex,
+               flex-direction, justify-content, flex-wrap, align-content
+               y overflow para crear layouts responsivos sin float ni position.
+  @subject     Programación III – UTN
+  @topic       Clase 02 – Introducción a CSS
+  @author      UTN-FRA
+  @version     1.0.0
+  @since       2026
+-->
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<!-- Codificación de caracteres: permite el uso de tildes y ñ -->
+		<meta charset="UTF-8">
+		<!-- Viewport responsivo: ajusta el ancho al dispositivo con zoom inicial 1:1 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>CSS – Flexbox</title>
+		<!-- Ícono de la pestaña del navegador -->
+		<link href="./img/utnLogo.png" rel="icon" type="image/png" />
+
+		<style type="text/css">
+			/*
+			  Contenedor flex básico: flex-direction: row
+			  Los hijos se ubican en fila (comportamiento por defecto).
+			  display: flex activa el contexto de formato flexible.
+			*/
+			.flex-container {
+				display: flex;
+				background-color: DodgerBlue;
+				flex-direction: row;
+			}
+
+			.flex-container > div {
+				background-color: #f1f1f1;
+				margin: 10px;
+				padding: 20px;
+				font-size: 30px;
+			}
+
+			/*
+			  Contenedor flex con justify-content: center
+			  Centra los hijos a lo largo del eje principal (horizontal en row).
+			*/
+			.flex-container-justify {
+				display: flex;
+				justify-content: center;
+				background-color: DodgerBlue;
+			}
+
+			.flex-container-justify > div {
+				background-color: #f1f1f1;
+				width: 100px;
+				margin: 10px;
+				text-align: center;
+				line-height: 75px;
+				font-size: 30px;
+			}
+
+			/*
+			  Contenedor flex con desbordamiento:
+			  - flex-wrap: wrap     : los hijos se pasan a la siguiente fila al no caber.
+			  - align-content: center: centra las filas en el eje transversal.
+			  - overflow: scroll    : agrega barra de desplazamiento si el contenido supera la altura.
+			*/
+			.flex-container-over {
+				display: flex;
+				height: 400px;
+				flex-wrap: wrap;
+				align-content: center;
+				overflow: scroll;
+				background-color: DodgerBlue;
+			}
+
+			.flex-container-over > div {
+				background-color: #f1f1f1;
+				width: 100px;
+				margin: 10px;
+				text-align: center;
+				line-height: 75px;
+				font-size: 30px;
+			}
+
+		</style>
+
+	</head>
+	<body>
+		<!-- ==================== ENCABEZADO DEL DOCUMENTO ==================== -->
+		<header>
+			<h1>Flexbox en CSS3</h1>
+			<nav>
+				<ul>
+					<li><a href="./index.html">Índice</a></li>
+					<li><a href="./clase02-07.html">Media Queries</a></li>
+					<li><a href="./clase02-09.html">Colores CSS</a></li>
+				</ul>
+			</nav>
+		</header>
+		<!-- ========================= CONTENIDO PRINCIPAL ========================= -->
+		<main>
+			<!-- Sección 1: flex-direction: row (fila, comportamiento por defecto) -->
+			<section>
+				<h2>Flex en fila – <code>flex-direction: row</code></h2>
+				<p>Los elementos hijos se colocan en una fila horizontal. Es el comportamiento por defecto de un contenedor flex.</p>
+				<div class="flex-container">
+					<div>1</div>
+					<div>2</div>
+					<div>3</div>
+				</div>
+			</section>
+
+			<hr>
+
+			<!-- Sección 2: justify-content: center (centrado en el eje principal) -->
+			<section>
+				<h2>Centrado – <code>justify-content: center</code></h2>
+				<p>La propiedad <strong>justify-content</strong> alinea los hijos a lo largo del eje principal. Con <em>center</em> los centra horizontalmente.</p>
+				<div class="flex-container-justify">
+					<div>1</div>
+					<div>2</div>
+					<div>3</div>
+				</div>
+			</section>
+
+			<hr>
+
+			<!-- Sección 3: flex-wrap + overflow (contenedor con múltiples líneas) -->
+			<section>
+				<h2>Ajuste de líneas – <code>flex-wrap: wrap</code></h2>
+				<p>Con <strong>flex-wrap: wrap</strong> los hijos que no caben en una fila se pasan a la siguiente. <strong>overflow: scroll</strong> agrega scroll cuando el contenido supera la altura del contenedor.</p>
+				<div class="flex-container-over">
+					<div>1</div> <div>2</div> <div>3</div>
+					<div>4</div> <div>5</div> <div>6</div>
+					<div>7</div> <div>8</div> <div>9</div>
+					<div>10</div> <div>11</div> <div>12</div>
+				</div>
+			</section>
+		</main>
+		<!-- ========================= PIE DE PÁGINA ========================= -->
+		<footer>
+			<p>Derechos reservados &copy; 2026 &mdash; UTN</p>
+		</footer>
+	</body>
+</html>

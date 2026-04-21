@@ -1,0 +1,30 @@
+/*!
+ * @file        EstilosClases.css
+ * @description Hoja de estilos para clase02-02.html.
+ *              Define el selector de elemento (p), la clase combinada (p.negrita)
+ *              y la clase genérica (.claseGenerica).
+ * @subject     Programación III – UTN
+ * @topic       Clase 02 – Introducción a CSS
+ * @author      UTN-FRA
+ * @version     1.0.0
+ * @since       2026
+ */
+
+/* Selector de elemento: aplica a todos los <p> del documento */
+p {
+	background : red;
+	color : navy;
+	font-size : 20pt;
+}
+
+/* Clase combinada: solo aplica a <p class="negrita">, no a otros elementos */
+p.negrita {
+	font-weight : bold;
+}
+
+/* Clase genérica: aplica a cualquier elemento que declare class="claseGenerica" */
+.claseGenerica {
+	font-style : italic;
+	font-size : 18pt;
+	font-family: Currier New;
+}

@@ -1,0 +1,17 @@
+/*!
+ * @file        Estilos2.css
+ * @description Hoja de estilos importada con @import en clase02-01.html.
+ *              Define el estilo del elemento h4.
+ * @subject     Programación III – UTN
+ * @topic       Clase 02 – Introducción a CSS
+ * @author      UTN-FRA
+ * @version     1.0.0
+ * @since       2026
+ */
+
+/* Estilo del encabezado h4: fondo rojo, texto azul marino, tamaño grande */
+h4 {
+	background : red;
+	color : navy;
+	font-size : 20pt;
+}

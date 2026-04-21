@@ -1,0 +1,17 @@
+/*!
+ * @file        Estilos.css
+ * @description Hoja de estilos externa para clase02-01.html.
+ *              Define el estilo del elemento h3 aplicado mediante <link>.
+ * @subject     Programación III – UTN
+ * @topic       Clase 02 – Introducción a CSS
+ * @author      UTN-FRA
+ * @version     1.0.0
+ * @since       2026
+ */
+
+/* Estilo del encabezado h3: fondo cian, texto negro, tamaño grande */
+h3 {
+	background : cyan;
+	color : black;
+	font-size : 22pt;
+}

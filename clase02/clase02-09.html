@@ -1,0 +1,88 @@
+<!--
+  @file        clase02-09.html
+  @description Colores en CSS: formas de expresar colores mediante nombres
+               predefinidos (Tomato, Orange), códigos hexadecimales (#rrggbb)
+               y notación rgba(r, g, b, alfa) para colores con transparencia.
+               Los estilos en línea son intencionales: son el objeto de estudio.
+  @subject     Programación III – UTN
+  @topic       Clase 02 – Introducción a CSS
+  @author      UTN-FRA
+  @version     1.0.0
+  @since       2026
+-->
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<!-- Codificación de caracteres: permite el uso de tildes y ñ -->
+		<meta charset="UTF-8">
+		<!-- Viewport responsivo: ajusta el ancho al dispositivo con zoom inicial 1:1 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>CSS – Colores</title>
+		<!-- Ícono de la pestaña del navegador -->
+		<link href="./img/utnLogo.png" rel="icon" type="image/png" />
+		<!-- Hoja externa con estilos de contenedor de columnas (float + clearfix) -->
+		<link type="text/css" rel="stylesheet" href="CSS/Estilos-contenedores.css" />
+	</head>
+	<body>
+		<!-- ==================== ENCABEZADO DEL DOCUMENTO ==================== -->
+		<header>
+			<h1>Colores en CSS</h1>
+			<nav>
+				<ul>
+					<li><a href="./index.html">Índice</a></li>
+					<li><a href="./clase02-08.html">Flexbox</a></li>
+					<li><a href="./clase02-10.html">Bordes Redondeados</a></li>
+				</ul>
+			</nav>
+		</header>
+		<!-- ========================= CONTENIDO PRINCIPAL ========================= -->
+		<main>
+			<p>CSS permite definir colores con tres notaciones: <strong>nombres predefinidos</strong>, <strong>hex&aacute;decimal</strong> y <strong>rgba()</strong>.</p>
+			<!--
+			  Los estilos en línea de esta sección son intencionales:
+			  cada elemento demuestra visualmente la notación de color que indica su texto.
+			-->
+			<!-- clearfix: patrón CSS para contener flotantes sin romper el flujo del documento -->
+			<div class="clearfix">
+
+				<!-- Columna 1: colores de fondo con las tres notaciones -->
+				<div class="container">
+					<h2>Color de fondo – <code>background-color</code></h2>
+					<!-- Nombre predefinido -->
+					<h3 style="background-color:Tomato;">Tomato</h3>
+					<h3 style="background-color:Orange;">Orange</h3>
+					<h3 style="background-color:DodgerBlue;">DodgerBlue</h3>
+					<!-- Notación hexadecimal #rrggbb -->
+					<h3 style="background-color: #ff0000;">#ff0000 (rojo)</h3>
+					<h3 style="background-color: #00ff00;">#00ff00 (verde)</h3>
+					<h3 style="background-color:#0000ff;">#0000ff (azul)</h3>
+					<!-- Notación rgba(r, g, b, alfa): alfa 0=transparente, 1=opaco -->
+					<h3 style="background-color: rgba(255, 99, 71, 0);">rgba(255, 99, 71, 0) &ndash; alfa 0 (transparente)</h3>
+					<h3 style="background-color: rgba(255, 99, 71, 0.5);">rgba(255, 99, 71, 0.5) &ndash; alfa 0.5 (semitransparente)</h3>
+					<h3 style="background-color: rgba(255, 99, 71, 1);">rgba(255, 99, 71, 1) &ndash; alfa 1 (opaco)</h3>
+				</div>
+
+				<!-- Columna 2: colores de texto con la propiedad color -->
+				<div class="container">
+					<h2>Color de texto – <code>color</code></h2>
+					<h3 style="color:Tomato;">Tomato</h3>
+					<p style="color: #0048ff;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+					<p style="color:rgba(47, 3, 100, 0.5)">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+				</div>
+
+				<!-- Columna 3: color de borde con la propiedad border -->
+				<div class="container">
+					<h2>Color de borde – <code>border</code></h2>
+					<h3 style="border:2px solid Tomato;">Tomato</h3>
+					<h3 style="border:2px solid DodgerBlue;">DodgerBlue</h3>
+					<h3 style="border:2px solid MediumSeaGreen;">MediumSeaGreen</h3>
+				</div>
+
+			</div>
+		</main>
+		<!-- ========================= PIE DE PÁGINA ========================= -->
+		<footer>
+			<p>Derechos reservados &copy; 2026 &mdash; UTN</p>
+		</footer>
+	</body>
+</html>

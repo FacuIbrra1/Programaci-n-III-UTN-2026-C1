@@ -1,0 +1,70 @@
+<!--
+  @file        clase01_02.html
+  @description Formatos de texto en HTML5: uso de párrafos (<p>),
+               separador horizontal (<hr>) y jerarquía de encabezados (h1–h6).
+  @subject     Programación III – UTN
+  @topic       Clase 01 – Introducción a HTML5
+  @author      UTN-FRA
+  @version     1.0.0
+  @since       2026
+-->
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- Codificación de caracteres: permite el uso de tildes y ñ -->
+        <meta charset="UTF-8">
+        <!-- Compatibilidad con Internet Explorer (modo de documento más reciente) -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Viewport responsivo: ajusta el ancho al dispositivo con zoom inicial 1:1 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formatos de Texto</title>
+    </head>
+    <body>
+        <!-- ==================== ENCABEZADO DEL DOCUMENTO ==================== -->
+        <header>
+            <h1>Formatos de Texto</h1>
+            <nav>
+                <ul>
+                    <li><a href="./index.html">Índice</a></li>
+                    <li><a href="./clase01_01.html">Introducción a HTML5</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- ========================= CONTENIDO PRINCIPAL ========================= -->
+        <main>
+            <!-- Sección 1: elemento <p> y comportamiento de párrafos -->
+            <section>
+                <h2>El elemento &lt;p&gt; - Párrafos</h2>
+                <p>El elemento P representa un párrafo. Cada párrafo genera un bloque de texto separado del anterior y del siguiente.</p>
+                <p>Esta etiqueta produce un salto de línea y
+                una línea en blanco entre párrafos.</p>
+                <p>Todo texto debe estar contenido dentro de un elemento apropiado, como este párrafo.</p>
+            </section>
+
+            <!-- Separador visual entre secciones: uso demás de <hr> -->
+            <hr>
+
+            <!-- Sección 2: elemento <hr> como separador temático -->
+            <section>
+                <h2>El elemento &lt;hr&gt; - Separador horizontal</h2>
+                <p>El elemento HR produce una línea de separación entre secciones del documento.</p>
+            </section>
+
+            <hr>
+
+            <!-- Sección 3: jerarquía de encabezados h1–h6 -->
+            <section>
+                <h2>Encabezados</h2>
+                <p>Los encabezados van de &lt;h1&gt; (más importante) a &lt;h6&gt; (menos importante). Se deben usar respetando la jerarquía del contenido.</p>
+                <h3>Ejemplo de encabezado nivel 3</h3>
+                <h4>Ejemplo de encabezado nivel 4</h4>
+                <h5>Ejemplo de encabezado nivel 5</h5>
+                <h6>Ejemplo de encabezado nivel 6</h6>
+            </section>
+        </main>
+        <!-- ========================= PIE DE PÁGINA ========================= -->
+        <footer>
+            <p>Derechos reservados &copy; 2024 &mdash; UTN</p>
+        </footer>
+    </body>
+</html>

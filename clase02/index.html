@@ -1,0 +1,321 @@
+<!--
+  @file        index.html
+  @description Página de índice de la Clase 02 – Introducción a CSS.
+               Presenta una grilla navegable de los 13 archivos de ejemplo
+               (11 clase02-*.html + 2 animacion*.html).
+               Nota: esta página usa solo HTML y CSS, sin JavaScript.
+  @subject     Programación III – UTN
+  @topic       Clase 02 – Introducción a CSS
+  @author      UTN-FRA
+  @version     1.0.0
+  @since       2026
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Codificación de caracteres: permite el uso de tildes y ñ -->
+    <meta charset="UTF-8">
+    <!-- Viewport responsivo: ajusta el ancho al dispositivo con zoom inicial 1:1 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Descripción breve utilizada por motores de búsqueda (SEO) -->
+    <meta name="description" content="Índice de archivos de la Clase 02 – Introducción a CSS – UTN Programación III">
+    <title>Clase 02 – Índice CSS</title>
+
+    <style>
+        /* ==========================================================================
+           ESTILOS GLOBALES
+           ========================================================================== */
+
+        /* Reset de modelo de caja: padding y border incluidos en el ancho total */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Layout de página completa con flexbox para fijar el footer al fondo */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #1a202c;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ==========================================================================
+           ENCABEZADO
+           ========================================================================== */
+
+        header {
+            background-color: #276749;
+            color: #fff;
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            letter-spacing: 0.05em;
+        }
+
+        header p {
+            margin-top: 0.5rem;
+            font-size: 1rem;
+            opacity: 0.85;
+        }
+
+        /* ==========================================================================
+           NAVEGACIÓN DEL ENCABEZADO
+           ========================================================================== */
+
+        header nav {
+            margin-top: 1rem;
+        }
+
+        header nav a {
+            color: #c6f6d5;
+            text-decoration: none;
+            font-size: 0.9rem;
+            border: 1px solid #c6f6d5;
+            border-radius: 4px;
+            padding: 0.3rem 0.75rem;
+        }
+
+        header nav a:hover {
+            background-color: #c6f6d5;
+            color: #276749;
+        }
+
+        /* ==========================================================================
+           CONTENIDO PRINCIPAL
+           ========================================================================== */
+
+        main {
+            flex: 1;
+            max-width: 960px;
+            width: 100%;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Subtítulo de sección dentro del main */
+        main > h2 {
+            font-size: 1.1rem;
+            color: #4a5568;
+            margin-bottom: 1.25rem;
+            border-left: 4px solid #276749;
+            padding-left: 0.75rem;
+        }
+
+        /* ==========================================================================
+           GRILLA DE TARJETAS
+           ========================================================================== */
+
+        /* Grilla responsiva: columnas de mínimo 220px, se ajustan automáticamente */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Tarjeta individual */
+        .card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            padding: 1.4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        /* Número de archivo */
+        .card-number {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #276749;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        /* Título de la tarjeta */
+        .card h2 {
+            font-size: 1rem;
+            color: #2d3748;
+            line-height: 1.3;
+        }
+
+        /* Descripción breve */
+        .card p {
+            font-size: 0.82rem;
+            color: #718096;
+            flex: 1;
+            line-height: 1.5;
+        }
+
+        /* Enlace de apertura del archivo */
+        .card a {
+            display: block;
+            background-color: #276749;
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 0;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .card a:hover {
+            background-color: #22543d;
+        }
+
+        /* ==========================================================================
+           PIE DE PÁGINA
+           ========================================================================== */
+
+        footer {
+            text-align: center;
+            padding: 1.25rem;
+            font-size: 0.8rem;
+            color: #a0aec0;
+            border-top: 1px solid #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== ENCABEZADO DEL DOCUMENTO ==================== -->
+    <header>
+        <h1>Programación III &mdash; UTN</h1>
+        <p>Clase 02 &middot; Introducción a CSS</p>
+        <nav>
+            <a href="../clase01/index.html">← Clase 01</a>
+        </nav>
+    </header>
+
+    <!-- ========================= CONTENIDO PRINCIPAL ========================= -->
+    <main>
+
+        <h2>Archivos de la clase</h2>
+
+        <!-- Grilla de tarjetas: cada tarjeta representa un archivo HTML de la clase -->
+        <div class="grid">
+
+            <!-- Archivo 01: formas de aplicar CSS -->
+            <div class="card">
+                <span class="card-number">01</span>
+                <h2>Aplicación de CSS</h2>
+                <p>Estilos en línea (<code>style</code>), bloque interno (<code>&lt;style&gt;</code>), hoja externa (<code>&lt;link&gt;</code>) e importación con <code>@import</code>.</p>
+                <a href="./clase02-01.html" target="_blank">Abrir</a>
+            </div>
+
+            <!-- Archivo 02: selectores de clase -->
+            <div class="card">
+                <span class="card-number">02</span>
+                <h2>Selectores de Clase</h2>
+                <p>Selector de elemento, clase ligada a elemento (<code>p.clase</code>) y clase genérica (<code>.clase</code>).</p>
+                <a href="./clase02-02.html" target="_blank">Abrir</a>
+            </div>
+
+            <!-- Archivo 03: selectores ID y pseudoclases -->
+            <div class="card">
+                <span class="card-number">03</span>
+                <h2>ID y Pseudoclases</h2>
+                <p>Selector <code>#id</code>, pseudoclases de enlace (<code>:link</code>, <code>:hover</code>, <code>:visited</code>) y pseudoelementos (<code>:first-letter</code>).</p>
+                <a href="./clase02-03.html" target="_blank">Abrir</a>
+            </div>
+
+            <!-- Archivo 04: combinando clases -->
+            <div class="card">
+                <span class="card-number">04</span>
+                <h2>Combinando Clases</h2>
+                <p>Clase ligada a elemento y clase genérica aplicadas simultáneamente con múltiples valores en <code>class</code>.</p>
+                <a href="./clase02-04.html" target="_blank">Abrir</a>
+            </div>
+
+            <!-- Archivo 05: selectores descendentes -->
+            <div class="card">
+                <span class="card-number">05</span>
+                <h2>Selectores Descendentes</h2>
+                <p>Selectores <code>p span.colorado</code> y <code>ul#listado li</code>: aplican solo a elementos dentro de un contexto específico.</p>
+                <a href="./clase02-05.html" target="_blank">Abrir</a>
+            </div>
+
+            <!-- Archivo 06: unidades viewport -->
+            <div class="card">
+                <span class="card-number">06</span>
+                <h2>Unidades Viewport</h2>
+                <p>Unidades <code>vw</code> y <code>vh</code>: dimensionan elementos en proporción al área visible del navegador.</p>
+                <a href="./clase02-06.html" target="_blank">Abrir</a>
+            </div>
+
+            <!-- Archivo 07: media queries -->
+            <div class="card">
+                <span class="card-number">07</span>
+                <h2>Media Queries</h2>
+                <p>Reglas <code>@media</code> con <code>min-width</code> y <code>orientation</code> para diseño responsivo.</p>
+                <a href="./clase02-07.html" target="_blank">Abrir</a>
+            </div>
+
+            <!-- Archivo 08: flexbox -->
+            <div class="card">
+                <span class="card-number">08</span>
+                <h2>Flexbox</h2>
+                <p><code>display:flex</code>, <code>flex-direction</code>, <code>justify-content</code>, <code>flex-wrap</code> y <code>align-content</code>.</p>
+                <a href="./clase02-08.html" target="_blank">Abrir</a>
+            </div>
+
+            <!-- Archivo 09: colores CSS -->
+            <div class="card">
+                <span class="card-number">09</span>
+                <h2>Colores en CSS</h2>
+                <p>Notaciones de color: nombres predefinidos, hexadecimal <code>#rrggbb</code> y <code>rgba(r, g, b, alfa)</code>.</p>
+                <a href="./clase02-09.html" target="_blank">Abrir</a>
+            </div>
+
+            <!-- Archivo 10: bordes redondeados -->
+            <div class="card">
+                <span class="card-number">10</span>
+                <h2>Bordes Redondeados</h2>
+                <p>Propiedad <code>border-radius</code> para rectángulos redondeados y formas circulares con fondo de color, borde o imagen.</p>
+                <a href="./clase02-10.html" target="_blank">Abrir</a>
+            </div>
+
+            <!-- Archivo 11: animaciones CSS (contenedor) -->
+            <div class="card">
+                <span class="card-number">11</span>
+                <h2>Animaciones CSS</h2>
+                <p>Página contenedora de dos ejemplos de <code>@keyframes</code>: sintaxis abreviada y propiedades individuales.</p>
+                <a href="./clase02-11.html" target="_blank">Abrir</a>
+            </div>
+
+            <!-- animacion1.html: @keyframes shorthand -->
+            <div class="card">
+                <span class="card-number">A1</span>
+                <h2>Animación 1 – Shorthand</h2>
+                <p>Uso de la propiedad abreviada <code>animation</code> con <code>@keyframes</code> para animar posición y color.</p>
+                <a href="./animacion1.html" target="_blank">Abrir</a>
+            </div>
+
+            <!-- animacion2.html: propiedades individuales animation-* -->
+            <div class="card">
+                <span class="card-number">A2</span>
+                <h2>Animación 2 – Propiedades</h2>
+                <p>Uso de las propiedades individuales <code>animation-name</code>, <code>animation-duration</code>, <code>animation-direction</code>, etc.</p>
+                <a href="./animacion2.html" target="_blank">Abrir</a>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- ========================= PIE DE PÁGINA ========================= -->
+    <footer>
+        <p>UTN &mdash; Programación III &middot; Clase 02 &copy; 2026</p>
+    </footer>
+
+</body>
+</html>

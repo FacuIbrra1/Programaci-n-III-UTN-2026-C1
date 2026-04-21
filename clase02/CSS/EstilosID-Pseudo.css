@@ -1,0 +1,62 @@
+/*!
+ * @file        EstilosID-Pseudo.css
+ * @description Hoja de estilos para clase02-03.html.
+ *              Define el selector #id, las pseudoclases de enlace
+ *              (:link, :active, :hover, :visited), los pseudoelementos
+ *              (:first-line, :first-letter) y el selector div.claseDiv.
+ * @subject     Programación III – UTN
+ * @topic       Clase 02 – Introducción a CSS
+ * @author      UTN-FRA
+ * @version     1.0.0
+ * @since       2026
+ */
+
+/* Selector de ID: aplica únicamente al elemento con id="id_unico" */
+#id_unico {
+	position : relative;
+	background : lime;
+	height : 500px;
+	padding-left : 50px;
+	padding-top: 100px;
+	border : solid;
+	border-color : red;
+	border-width : 1;
+	visibility: visible;
+}
+
+/* Pseudoclases de enlace: estilizan el estado del elemento <a> */
+/* :link    – enlace no visitado */
+a:link {
+	color : rgb(247, 76, 8);
+}
+/* :active  – enlace en el momento del clic */
+a:active {
+	color: cyan;
+}
+/* :hover   – cursor del ratón sobre el enlace */
+a:hover {
+	color : green;
+}
+/* :visited – enlace ya visitado */
+a:visited {
+	color: pink;
+}
+
+/* Pseudoelemento :first-line – estiliza la primera línea de cada <p> */
+p:first-line {
+	font-style : small-caps;
+}
+
+/* Pseudoelemento :first-letter – estiliza la primera letra (efecto capitular) */
+p:first-letter {
+	font-size : 250%;
+	float : left;
+}
+
+/* Selector combinado elemento.clase: aplica solo a <div class="claseDiv"> */
+div.claseDiv {
+	border : dotted;
+	border-color : black;
+	border-width : 2;
+	visibility: visible;
+}

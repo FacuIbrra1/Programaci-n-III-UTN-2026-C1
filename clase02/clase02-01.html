@@ -1,0 +1,109 @@
+<!--
+  @file        clase02-01.html
+  @description Formas de aplicar CSS en HTML5: estilos en línea (atributo style),
+               bloque interno (<style>), hoja externa (<link>) e importación
+               con la regla @import.
+  @subject     Programación III – UTN
+  @topic       Clase 02 – Introducción a CSS
+  @author      UTN-FRA
+  @version     1.0.0
+  @since       2026
+-->
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<!-- Codificación de caracteres: permite el uso de tildes y ñ -->
+		<meta charset="UTF-8">
+		<!-- Viewport responsivo: ajusta el ancho al dispositivo con zoom inicial 1:1 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Aplicación de CSS</title>
+		<!-- Ícono de la pestaña del navegador -->
+		<link href="./img/utnLogo.png" rel="icon" type="image/png" />
+
+		<!--
+		  Método 1 – Estilo interno (<style>):
+		  Los estilos definidos aquí afectan a todo el documento.
+		  Tienen mayor especificidad que una hoja externa pero menor que un estilo en línea.
+		-->
+		<style type="text/css">
+			body{
+				background : navy;
+				color: white;
+				font-size: 14pt;
+				}
+		</style>
+
+		<!--
+		  Método 2 – Hoja de estilos externa (<link>):
+		  Permite reutilizar el mismo CSS en múltiples páginas.
+		  rel="stylesheet" indica que el recurso vinculado es una hoja de estilos CSS.
+		-->
+		<link type="text/css" rel="stylesheet" href="CSS/Estilos.css" />
+
+		<!--
+		  Método 3 – Importación con @import:
+		  Incluye otra hoja de estilos dentro de un bloque <style>.
+		  Debe ser la primera instrucción del bloque para que sea válida.
+		-->
+		<style type="text/css">
+			@import url("CSS/Estilos2.css");
+		</style>
+
+	</head>
+	<body>
+		<!-- ==================== ENCABEZADO DEL DOCUMENTO ==================== -->
+		<header>
+			<h1>Formas de aplicar CSS</h1>
+			<nav>
+				<ul>
+					<li><a href="./index.html">Índice</a></li>
+					<li><a href="./clase02-02.html">Clases CSS</a></li>
+				</ul>
+			</nav>
+		</header>
+		<!-- ========================= CONTENIDO PRINCIPAL ========================= -->
+		<main>
+			<!-- Sección 1: estilo interno en bloque <style> aplicado al body -->
+			<section>
+				<h2>Estilo interno – bloque &lt;style&gt;</h2>
+				<p>El fondo y el color de este texto provienen de un bloque <strong>&lt;style&gt;</strong> definido en el &lt;head&gt;.</p>
+			</section>
+
+			<hr>
+
+			<!-- Sección 2: estilo en línea mediante el atributo style -->
+			<section>
+				<h2>Estilo en línea – atributo <code>style</code></h2>
+				<p>El atributo <strong>style</strong> aplica CSS directamente sobre un elemento. Tiene la mayor especificidad.</p>
+				<!-- Ejemplo: estilo en línea sobre un <span> -->
+				<p>
+					<span style="background-color:white;color:red;font-size:18pt;">
+						Estilo aplicado en el atributo style
+					</span>
+				</p>
+			</section>
+
+			<hr>
+
+			<!-- Sección 3: hoja de estilos externa vinculada con <link> -->
+			<section>
+				<h2>Hoja externa – &lt;link&gt;</h2>
+				<p>Los estilos de este encabezado provienen del archivo <strong>CSS/Estilos.css</strong> vinculado con &lt;link&gt;.</p>
+				<h3>Estilo aplicado desde un archivo *.CSS</h3>
+			</section>
+
+			<hr>
+
+			<!-- Sección 4: importación de hoja de estilos con @import -->
+			<section>
+				<h2>Importación – regla <code>@import</code></h2>
+				<p>Los estilos de este encabezado provienen del archivo <strong>CSS/Estilos2.css</strong> cargado con <code>@import</code>.</p>
+				<h4>Estilo aplicado desde el comando @IMPORT</h4>
+			</section>
+		</main>
+		<!-- ========================= PIE DE PÁGINA ========================= -->
+		<footer>
+			<p>Derechos reservados &copy; 2026 &mdash; UTN</p>
+		</footer>
+	</body>
+</html>

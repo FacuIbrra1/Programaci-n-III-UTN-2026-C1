@@ -1,0 +1,83 @@
+<!--
+  @file        clase02-06.html
+  @description Unidades de viewport en CSS: vw (viewport width) y vh (viewport height).
+               Demostración de cómo los elementos se dimensionan en proporción
+               al tamaño visible del navegador.
+  @subject     Programación III – UTN
+  @topic       Clase 02 – Introducción a CSS
+  @author      UTN-FRA
+  @version     1.0.0
+  @since       2026
+-->
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<!-- Codificación de caracteres: permite el uso de tildes y ñ -->
+		<meta charset="UTF-8">
+		<!-- Viewport responsivo: ajusta el ancho al dispositivo con zoom inicial 1:1 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>CSS – Unidades Viewport</title>
+		<!-- Ícono de la pestaña del navegador -->
+		<link href="./img/utnLogo.png" rel="icon" type="image/png" />
+
+		<style type="text/css">
+			/*
+			  Caja roja: 25% del ancho del viewport x 50% del alto del viewport.
+			  vw (viewport width) : 1vw = 1% del ancho total del área visible.
+			  vh (viewport height): 1vh = 1% del alto total del área visible.
+			*/
+			.colorado {
+			  background-color: red;
+			  width: 25vw;
+			  height: 50vh;
+			}
+
+			/*
+			  Caja azul: 100% del ancho del viewport x 75% del alto del viewport.
+			  Con width: 100vw el elemento ocupa todo el ancho visible sin importar
+			  el tamaño de la ventana.
+			*/
+			.azulada {
+			  background-color: blue;
+			  width: 100vw;
+			  height: 75vh;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- ==================== ENCABEZADO DEL DOCUMENTO ==================== -->
+		<header>
+			<h1>Unidades de Viewport en CSS</h1>
+			<nav>
+				<ul>
+					<li><a href="./index.html">Índice</a></li>
+					<li><a href="./clase02-05.html">Selectores Descendentes</a></li>
+					<li><a href="./clase02-07.html">Media Queries</a></li>
+				</ul>
+			</nav>
+		</header>
+		<!-- ========================= CONTENIDO PRINCIPAL ========================= -->
+		<main>
+			<!-- Sección 1: descripción de las unidades vw y vh -->
+			<section>
+				<h2>Descripción de las unidades</h2>
+				<p>Las unidades <strong>vw</strong> y <strong>vh</strong> son relativas al tamaño del área visible del navegador (viewport). Se adaptan automáticamente al redimensionar la ventana.</p>
+			</section>
+
+			<hr>
+
+			<!-- Sección 2: demostración visual de las cajas -->
+			<section>
+				<h2>Demostración visual</h2>
+				<!-- Caja roja: 25vw x 50vh -->
+				<div class="colorado"></div>
+				<!-- Caja azul: 100vw x 75vh -->
+				<div class="azulada"></div>
+			</section>
+		</main>
+		<!-- ========================= PIE DE PÁGINA ========================= -->
+		<footer>
+			<p>Derechos reservados &copy; 2026 &mdash; UTN</p>
+		</footer>
+	</body>
+</html>

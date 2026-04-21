@@ -1,0 +1,102 @@
+<!--
+  @file        animacion2.html
+  @description Animación CSS3 con propiedades individuales: uso de animation-name,
+               animation-duration, animation-timing-function, animation-delay,
+               animation-iteration-count y animation-direction por separado.
+               La animación cambia la imagen de fondo del elemento en cada fotograma.
+  @subject     Programación III – UTN
+  @topic       Clase 02 – Introducción a CSS
+  @author      UTN-FRA
+  @version     1.0.0
+  @since       2026
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Codificación de caracteres: permite el uso de tildes y ñ -->
+    <meta charset="UTF-8">
+    <!-- Viewport responsivo: ajusta el ancho al dispositivo con zoom inicial 1:1 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS – Animación con propiedades individuales</title>
+    <!-- Ícono de la pestaña del navegador -->
+    <link href="./img/utnLogo.png" rel="icon" type="image/png" />
+
+    <style>
+        /*
+          Elemento animado con propiedades individuales de animation:
+          - animation-name            : nombre del @keyframes a usar
+          - animation-duration        : duración de un ciclo completo
+          - animation-timing-function : curva de velocidad (linear = constante)
+          - animation-delay           : retardo antes del primer ciclo
+          - animation-iteration-count : número de repeticiones (infinite = sin límite)
+          - animation-direction       : alternate = ida y vuelta entre ciclos
+        */
+        div {
+            width: 200px;
+            height: 170px;
+            background-image: url("img/coronavirus.jpg");
+            background-repeat: round;
+            position: relative;
+            animation-name: animacion-imagen;
+            animation-duration: 7s;
+            animation-timing-function: linear;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        /*
+          @keyframes animacion-imagen
+          Cambia la imagen de fondo y la posición en cada fotograma:
+          - 0%  : imagen 1, esquina inferior derecha
+          - 25% : imagen 2, esquina superior izquierda
+          - 50% : imagen 3, esquina inferior derecha
+          - 75% : imagen 4, esquina inferior izquierda
+          - 100%: imagen 1, esquina superior derecha
+        */
+        @keyframes animacion-imagen {
+            0%   {background-image:url("img/coronavirus.jpg");  background-repeat:round; left:400px; top:200px;}
+            25%  {background-image:url("img/coronavirus2.jpg"); background-repeat:round; left:0px;   top:0px;}
+            50%  {background-image:url("img/winhomer.jpg");     background-repeat:round; left:400px; top:200px;}
+            75%  {background-image:url("img/faro.jpg");         background-repeat:round; left:0px;   top:200px;}
+            100% {background-image:url("img/coronavirus.jpg");  background-repeat:round; left:400px; top:0px;}
+        }
+    </style>
+</head>
+<body>
+    <!-- ==================== ENCABEZADO DEL DOCUMENTO ==================== -->
+    <header>
+        <h1>Animación con propiedades individuales <code>animation-*</code></h1>
+    </header>
+    <!-- ========================= CONTENIDO PRINCIPAL ========================= -->
+    <main>
+        <!-- Sección 1: resumen de las propiedades individuales -->
+        <section>
+            <h2>Propiedades individuales</h2>
+            <!-- Bloque <pre> preserva el espaciado para mostrar código formateado -->
+            <pre>
+en el elemento:
+  animation-name: identificador;
+  animation-duration: segundos;
+  animation-timing-function: tipo;
+  animation-delay: segundos;
+  animation-iteration-count: número | infinite;
+  animation-direction: normal | alternate;</pre>
+        </section>
+
+        <hr>
+
+        <!-- Sección 2: demostración del elemento animado -->
+        <section>
+            <h2>Demostración</h2>
+            <p>El elemento de abajo cambia su imagen de fondo y recorre posiciones en cada fotograma de la animación.</p>
+            <!-- Div animado: las propiedades animation-* dirigen la animación -->
+            <div></div>
+        </section>
+    </main>
+    <!-- ========================= PIE DE PÁGINA ========================= -->
+    <footer>
+        <p>Derechos reservados &copy; 2026 &mdash; UTN</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!--
+  @file        clase01_05.html
+  @description Listas en HTML5: listas desordenadas (<ul>), ordenadas (<ol>)
+               y de definiciones (<dl>). Atributos type y value en <ol>.
+  @subject     Programación III – UTN
+  @topic       Clase 01 – Introducción a HTML5
+  @author      UTN-FRA
+  @version     1.0.0
+  @since       2026
+-->
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- Codificación de caracteres: permite el uso de tildes y ñ -->
+        <meta charset="UTF-8">
+        <!-- Compatibilidad con Internet Explorer (modo de documento más reciente) -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Viewport responsivo: ajusta el ancho al dispositivo con zoom inicial 1:1 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Listas en HTML</title>
+    </head>
+    <body>
+        <!-- ==================== ENCABEZADO DEL DOCUMENTO ==================== -->
+        <header>
+            <h1>Listas en HTML</h1>
+            <nav>
+                <ul>
+                    <li><a href="./index.html">Índice</a></li>
+                    <li><a href="./clase01_06.html">Tablas</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- ========================= CONTENIDO PRINCIPAL ========================= -->
+        <main>
+            <!-- Sección 1: lista desordenada <ul> -->
+            <!-- Posibles valores del marcador: disc | circle | square | none -->
+            <section>
+                <h2>Listas Desordenadas &lt;ul&gt;</h2>
+                <p>El elemento &lt;ul&gt; crea una lista sin orden establecido. El tipo de marcador se puede variar: disc, circle, square o none.</p>
+                <!-- disc; circle; square; none;-->
+                <ul>
+                    <li>Item-4</li>
+                    <li>Item-2</li>
+                    <li>Item-3</li>
+                    <li>Item-1</li>
+                </ul>
+            </section>
+
+            <hr>
+
+            <!-- Sección 2: lista ordenada <ol> -->
+            <!-- type: define el estilo del marcador: 1 | a | A | i | I       -->
+            <!-- value: fuerza el número de inicio de un ítem específico      -->
+            <section>
+                <h2>Listas Ordenadas &lt;ol&gt;</h2>
+                <p>El elemento &lt;ol&gt; crea una lista numerada. El atributo <strong>type</strong> define el estilo: 1, a, A, i, I. El atributo <strong>value</strong> permite establecer un número de inicio personalizado.</p>
+                <!-- 1; a; A; i; I-->
+                <ol type="I">
+                    <li value="10">Item</li>
+                    <li>Item</li>
+                    <li value="20">Item</li>
+                    <li>Item</li>
+                </ol>
+            </section>
+
+            <hr>
+
+            <!-- Sección 3: lista de definiciones <dl> -->
+            <!-- <dt>: término a definir; <dd>: descripción del término        -->
+            <section>
+                <h2>Listas de Definiciones &lt;dl&gt;</h2>
+                <p>El elemento &lt;dl&gt; agrupa términos (&lt;dt&gt;) con sus respectivas definiciones (&lt;dd&gt;).</p>
+                <dl>
+                    <dt>ROJO</dt>
+                    <dd>#FF0000</dd>
+                    <dt>VERDE</dt>
+                    <dd>#00FF00</dd>
+                    <dt>AZUL</dt>
+                    <dd>#0000FF</dd>
+                </dl>
+            </section>
+        </main>
+        <!-- ========================= PIE DE PÁGINA ========================= -->
+        <footer>
+            <p>Derechos reservados &copy; 2024 &mdash; UTN</p>
+        </footer>
+    </body>
+</html>

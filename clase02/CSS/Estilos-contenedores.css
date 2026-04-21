@@ -1,0 +1,33 @@
+/*!
+ * @file        Estilos-contenedores.css
+ * @description Hoja de estilos compartida por clase02-09.html y clase02-10.html.
+ *              Implementa el patrón de columnas con float y la técnica
+ *              clearfix para contener elementos flotantes correctamente.
+ * @subject     Programación III – UTN
+ * @topic       Clase 02 – Introducción a CSS
+ * @author      UTN-FRA
+ * @version     1.0.0
+ * @since       2026
+ */
+
+/* Reset de modelo de caja: incluye padding y border dentro del width/height declarado */
+* {
+    box-sizing: border-box;
+}
+
+/* Columna flotante: ocupa un tercio del contenedor padre */
+.container {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+}
+
+/*
+  Clearfix: pseudo-elemento ::after que elimina el flotado.
+  Evita que el contenedor padre colapse cuando todos sus hijos son flotantes.
+*/
+.clearfix::after {
+    clear: both;
+    display: table;
+    content: "";
+}

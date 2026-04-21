@@ -1,0 +1,73 @@
+<!--
+  @file        clase02-02.html
+  @description Selectores de clase en CSS: clases simples, clases combinadas
+               con elemento (p.clase) y clases genéricas aplicadas a distintos
+               elementos HTML.
+  @subject     Programación III – UTN
+  @topic       Clase 02 – Introducción a CSS
+  @author      UTN-FRA
+  @version     1.0.0
+  @since       2026
+-->
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<!-- Codificación de caracteres: permite el uso de tildes y ñ -->
+		<meta charset="UTF-8">
+		<!-- Viewport responsivo: ajusta el ancho al dispositivo con zoom inicial 1:1 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>CSS – Clases</title>
+		<!-- Ícono de la pestaña del navegador -->
+		<link href="./img/utnLogo.png" rel="icon" type="image/png" />
+		<!-- Hoja de estilos externa con las definiciones de clases CSS -->
+		<link type="text/css" rel="stylesheet" href="CSS/EstilosClases.css" />
+	</head>
+	<body>
+		<!-- ==================== ENCABEZADO DEL DOCUMENTO ==================== -->
+		<header>
+			<h1>Selectores de Clase en CSS</h1>
+			<nav>
+				<ul>
+					<li><a href="./index.html">Índice</a></li>
+					<li><a href="./clase02-01.html">Aplicación de CSS</a></li>
+					<li><a href="./clase02-03.html">ID y Pseudoclases</a></li>
+				</ul>
+			</nav>
+		</header>
+		<!-- ========================= CONTENIDO PRINCIPAL ========================= -->
+		<main>
+			<!-- Sección 1: selector de elemento – afecta a todos los <p> -->
+			<section>
+				<h2>Selector de elemento</h2>
+				<p>Este párrafo recibe estilos del selector <strong>p</strong> definido en la hoja externa.</p>
+			</section>
+
+			<hr>
+
+			<!-- Sección 2: clase combinada con elemento (p.negrita) -->
+			<!-- Solo los <p> con class="negrita" son afectados; otros elementos no -->
+			<section>
+				<h2>Clase combinada con elemento <code>p.negrita</code></h2>
+				<p class="negrita">Este párrafo recibe estilos de la clase <strong>negrita</strong> aplicada sobre <strong>p</strong>.</p>
+				<!-- span.negrita no es afectado porque el selector es p.negrita -->
+				<span class="negrita">Este span tiene class="negrita" pero el selector p.negrita no lo alcanza.</span>
+			</section>
+
+			<hr>
+
+			<!-- Sección 3: clase genérica (.claseGenerica) aplicada a distintos elementos -->
+			<!-- Una clase genérica aplica a cualquier elemento que la declare -->
+			<section>
+				<h2>Clase genérica <code>.claseGenerica</code></h2>
+				<p>La clase <strong>.claseGenerica</strong> puede aplicarse a cualquier elemento HTML.</p>
+				<span class="claseGenerica">Span con clase genérica</span>
+				<div class="claseGenerica">Div con clase genérica</div>
+				<h3 class="claseGenerica">Encabezado nivel 3 con clase genérica</h3>
+			</section>
+		</main>
+		<!-- ========================= PIE DE PÁGINA ========================= -->
+		<footer>
+			<p>Derechos reservados &copy; 2026 &mdash; UTN</p>
+		</footer>
+	</body>
+</html>

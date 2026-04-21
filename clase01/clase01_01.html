@@ -1,0 +1,71 @@
+<!--
+  @file        clase01_01.html
+  @description Introducción a HTML5: estructura básica de un documento,
+               jerarquía de encabezados (h1–h6), enlaces y elemento aside.
+  @subject     Programación III – UTN
+  @topic       Clase 01 – Introducción a HTML5
+  @author      UTN-FRA
+  @version     1.0.0
+  @since       2026
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Codificación de caracteres: permite el uso de tildes y ñ -->
+    <meta charset="UTF-8">
+    <!-- Compatibilidad con Internet Explorer (modo de documento más reciente) -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Viewport responsivo: ajusta el ancho al dispositivo con zoom inicial 1:1 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción a HTML 5</title>
+</head>
+<body>
+
+    <!-- ==================== ENCABEZADO DEL DOCUMENTO ==================== -->
+    <!-- header: contiene el título principal y la navegación del sitio    -->
+    <header>
+        <!-- h1: encabezado de primer nivel, único por página -->
+        <h1>Introducción a HTML 5</h1>
+        <!-- nav: bloque de navegación principal con enlaces a otros ejemplos -->
+        <nav>
+            <ul>
+                <li><a href="./index.html">Índice</a></li>
+                <li><a href="./clase01_08.html">Tags Semánticos</a></li>
+                <li><a href="./clase01_09.html">Estructura Semántica</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- ========================= CONTENIDO PRINCIPAL ========================= -->
+    <!-- main: área de contenido único y principal de la página              -->
+    <main>
+        <!-- Sección 1: demostración de la jerarquía de encabezados h1–h6 -->
+        <section>
+            <h2>Jerarquía de encabezados</h2>
+            <h3>Encabezado nivel 3</h3>
+            <h4>Encabezado nivel 4</h4>
+            <h5>Encabezado nivel 5</h5>
+            <h6>Encabezado nivel 6</h6>
+        </section>
+
+        <!-- Sección 2: contenido de ejemplo con párrafo y enlace externo -->
+        <!-- Todo lo visible se colocará aquí -->
+        <section>
+            <h2>Contenido de ejemplo</h2>
+            <p>Hola mundo!!!</p>
+            <p><a href="https://www.utn.edu.ar" target="_blank">Sitio oficial de la UTN</a></p>
+        </section>
+
+        <!-- aside: contenido complementario, no esencial para el flujo principal -->
+        <aside>
+            <h2>Información adicional</h2>
+            <p>Este es un aside: contenido relacionado pero secundario al contenido principal.</p>
+        </aside>
+    </main>
+    <!-- ========================= PIE DE PÁGINA ========================= -->
+    <!-- footer: información legal y de autoría del documento             -->
+    <footer>
+        <p>Derechos reservados &copy; 2024</p>
+        <p>Desarrollo web &mdash; UTN</p>
+    </footer>
+</body>
+</html>

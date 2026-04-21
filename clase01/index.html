@@ -1,0 +1,318 @@
+<!--
+  @file        index.html
+  @description Página de índice de la Clase 01 – Introducción a HTML5.
+               Presenta una grilla navegable de los 9 archivos de ejemplo
+               con filtro de búsqueda en tiempo real (JavaScript vanilla).
+  @subject     Programación III – UTN
+  @topic       Clase 01 – Introducción a HTML5
+  @author      UTN-FRA
+  @version     1.0.0
+  @since       2026
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Codificación de caracteres: permite el uso de tildes y ñ -->
+    <meta charset="UTF-8">
+    <!-- Viewport responsivo: ajusta el ancho al dispositivo con zoom inicial 1:1 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 01 - Índice</title>
+    <style>
+        /* ==========================================================================
+           ESTILOS GLOBALES
+           ========================================================================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Layout de página completa con flexbox para fijar el footer al fondo */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #1a202c;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ==========================================================================
+           ENCABEZADO
+           ========================================================================== */
+        header {
+            background-color: #2b6cb0;
+            color: #fff;
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            letter-spacing: 0.05em;
+        }
+
+        header p {
+            margin-top: 0.5rem;
+            font-size: 1rem;
+            opacity: 0.85;
+        }
+
+        /* ==========================================================================
+           CONTENIDO PRINCIPAL
+           ========================================================================== */
+        main {
+            flex: 1;
+            max-width: 900px;
+            width: 100%;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Grilla responsiva: columnas de mínimo 240px, se ajustan automáticamente */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.25rem;
+        }
+
+        /* Tarjeta individual: layout en columna con transición de elevación al hover */
+        .card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-number {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #718096;
+        }
+
+        .card h2 {
+            font-size: 1.05rem;
+            color: #2d3748;
+        }
+
+        .card p {
+            font-size: 0.875rem;
+            color: #718096;
+            flex: 1;
+        }
+
+        .card a {
+            display: inline-block;
+            background-color: #2b6cb0;
+            color: #fff;
+            text-decoration: none;
+            padding: 0.45rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+            transition: background-color 0.15s ease;
+        }
+
+        .card a:hover {
+            background-color: #2c5282;
+        }
+
+        /* ==========================================================================
+           PIE DE PÁGINA
+           ========================================================================== */
+        footer {
+            text-align: center;
+            padding: 1.25rem;
+            font-size: 0.8rem;
+            color: #a0aec0;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        /* ==========================================================================
+           BARRA DE BÚSQUEDA
+           ========================================================================== */
+        .search-bar {
+            margin-bottom: 1.75rem;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 0.65rem 1rem;
+            font-size: 0.95rem;
+            border: 1px solid #cbd5e0;
+            border-radius: 8px;
+            outline: none;
+            background-color: #fff;
+            color: #2d3748;
+            transition: border-color 0.15s ease;
+        }
+
+        .search-bar input:focus {
+            border-color: #2b6cb0;
+        }
+
+        /* Mensaje de "sin resultados": oculto por defecto, visible vía JS */
+        .no-results {
+            display: none;
+            text-align: center;
+            color: #a0aec0;
+            font-size: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== ENCABEZADO DEL DOCUMENTO ==================== -->
+    <header>
+        <h1>Programación III &mdash; UTN</h1>
+        <p>Clase 01 &middot; Introducción a HTML5</p>
+    </header>
+
+    <!-- ========================= CONTENIDO PRINCIPAL ========================= -->
+    <main>
+        <!-- Barra de búsqueda: filtra las tarjetas en tiempo real mediante JS -->
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Buscar archivo..." aria-label="Buscar archivo">
+        </div>
+
+        <!-- Grilla de archivos: cada tarjeta representa un archivo de la clase -->
+        <!-- data-title: palabras clave adicionales usadas por el filtro de búsqueda -->
+        <div class="grid" id="fileGrid">
+
+            <!-- Archivo 01: estructura básica e introducción a HTML5 -->
+            <div class="card" data-title="introducción a html 5">
+                <span class="card-number">01</span>
+                <h2>Introducción a HTML5</h2>
+                <p>Estructura básica del documento: header, nav, main, footer y jerarquía de encabezados.</p>
+                <a href="./clase01_01.html" target="_blank">Abrir</a>
+            </div>
+
+            <!-- Archivo 02: formatos de texto, párrafos y separadores -->
+            <div class="card" data-title="formatos párrafos">
+                <span class="card-number">02</span>
+                <h2>Formatos y Párrafos</h2>
+                <p>Uso del elemento <code>&lt;p&gt;</code>, saltos de línea y separadores horizontales.</p>
+                <a href="./clase01_02.html" target="_blank">Abrir</a>
+            </div>
+
+            <!-- Archivo 03: imágenes simples y mapas de imagen -->
+            <div class="card" data-title="imágenes mapas">
+                <span class="card-number">03</span>
+                <h2>Imágenes y Mapas</h2>
+                <p>Inserción de imágenes con <code>&lt;img&gt;</code> y mapas de imagen con <code>&lt;map&gt;</code>.</p>
+                <a href="./clase01_03.html" target="_blank">Abrir</a>
+            </div>
+
+            <!-- Archivo 04: audio, video e iframe -->
+            <div class="card" data-title="audio video iframe">
+                <span class="card-number">04</span>
+                <h2>Audio, Video e iframe</h2>
+                <p>Multimedia con <code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code> e incrustación con <code>&lt;iframe&gt;</code>.</p>
+                <a href="./clase01_04.html" target="_blank">Abrir</a>
+            </div>
+
+            <!-- Archivo 05: listas ul, ol y dl -->
+            <div class="card" data-title="listas ordenadas desordenadas definiciones">
+                <span class="card-number">05</span>
+                <h2>Listas</h2>
+                <p>Listas desordenadas <code>&lt;ul&gt;</code>, ordenadas <code>&lt;ol&gt;</code> y de definiciones <code>&lt;dl&gt;</code>.</p>
+                <a href="./clase01_05.html" target="_blank">Abrir</a>
+            </div>
+
+            <!-- Archivo 06: tablas con thead, tbody, tfoot y celdas combinadas -->
+            <div class="card" data-title="tablas thead tbody tfoot">
+                <span class="card-number">06</span>
+                <h2>Tablas</h2>
+                <p>Estructura de tablas con <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code> y celdas combinadas.</p>
+                <a href="./clase01_06.html" target="_blank">Abrir</a>
+            </div>
+
+            <!-- Archivo 07: contenedores div (bloque) y span (línea) -->
+            <div class="card" data-title="div span bloques línea">
+                <span class="card-number">07</span>
+                <h2>DIVs y SPANs</h2>
+                <p>Contenedores de bloque <code>&lt;div&gt;</code> vs. contenedores en línea <code>&lt;span&gt;</code>.</p>
+                <a href="./clase01_07.html" target="_blank">Abrir</a>
+            </div>
+
+            <!-- Archivo 08: tags semánticos de formato -->
+            <div class="card" data-title="tags semánticos strong em bold italic">
+                <span class="card-number">08</span>
+                <h2>Tags Semánticos</h2>
+                <p>Diferencias entre <code>&lt;b&gt;</code>/<code>&lt;strong&gt;</code> e <code>&lt;i&gt;</code>/<code>&lt;em&gt;</code>, y uso de metas.</p>
+                <a href="./clase01_08.html" target="_blank">Abrir</a>
+            </div>
+
+            <!-- Archivo 09: estructura semántica completa -->
+            <div class="card" data-title="estructura semántica header nav main footer aside section article">
+                <span class="card-number">09</span>
+                <h2>Estructura Semántica</h2>
+                <p>Diseño completo con <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;aside&gt;</code> y <code>&lt;footer&gt;</code>.</p>
+                <a href="./clase01_09.html" target="_blank">Abrir</a>
+            </div>
+
+        </div>
+
+        <!-- Mensaje de sin resultados: el JS lo muestra cuando ningún filtro coincide -->
+        <p class="no-results" id="noResults">No se encontraron archivos.</p>
+    </main>
+
+    <!-- ========================= PIE DE PÁGINA ========================= -->
+    <footer>
+        <p>UTN &mdash; Programación III &middot; Clase 01 &copy; 2024</p>
+    </footer>
+
+    <script>
+        /**
+         * Filtro de búsqueda en tiempo real para la grilla de archivos.
+         *
+         * Escucha el evento 'input' del campo de texto y oculta las tarjetas
+         * cuyo título, data-title o descripción no contengan el texto ingresado.
+         * Muestra el mensaje "sin resultados" cuando ningún elemento coincide.
+         */
+
+        /* Referencias a los elementos del DOM */
+        const searchInput = document.getElementById('searchInput');
+        const cards       = document.querySelectorAll('.card');
+        const noResults   = document.getElementById('noResults');
+
+        /* Escucha cada pulsación de tecla en el campo de búsqueda */
+        searchInput.addEventListener('input', function () {
+            const query = this.value.toLowerCase().trim();
+            let visibleCount = 0;
+
+            cards.forEach(function (card) {
+                /* Obtiene los textos de búsqueda de la tarjeta */
+                const title       = card.querySelector('h2').textContent.toLowerCase();
+                const dataTitle   = card.getAttribute('data-title') || '';
+                const description = card.querySelector('p').textContent.toLowerCase();
+
+                /* Muestra la tarjeta si alguno de los campos contiene la búsqueda */
+                if (title.includes(query) || dataTitle.includes(query) || description.includes(query)) {
+                    card.style.display = '';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            /* Muestra u oculta el mensaje de sin resultados según corresponda */
+            noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        });
+    </script>
+
+</body>
+</html>

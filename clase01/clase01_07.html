@@ -1,0 +1,88 @@
+<!--
+  @file        clase01_07.html
+  @description Contenedores genéricos en HTML5: <div> (bloque) y <span> (línea).
+               Uso junto con los atributos id y class para aplicar estilos
+               e identificar secciones del documento.
+  @subject     Programación III – UTN
+  @topic       Clase 01 – Introducción a HTML5
+  @author      UTN-FRA
+  @version     1.0.0
+  @since       2026
+-->
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- Codificación de caracteres: permite el uso de tildes y ñ -->
+        <meta charset="UTF-8">
+        <!-- Compatibilidad con Internet Explorer (modo de documento más reciente) -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Viewport responsivo: ajusta el ancho al dispositivo con zoom inicial 1:1 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DIVs y SPANs</title>
+    </head>
+	<body>
+		<!-- ==================== ENCABEZADO DEL DOCUMENTO ==================== -->
+		<header>
+			<h1>DIVs y SPANs</h1>
+			<nav>
+				<ul>
+					<li><a href="./index.html">Índice</a></li>
+					<li><a href="./clase01_06.html">Tablas</a></li>
+					<li><a href="./clase01_08.html">Tags Semánticos</a></li>
+				</ul>
+			</nav>
+		</header>
+		<!-- ========================= CONTENIDO PRINCIPAL ========================= -->
+		<main>
+			<!-- Sección 1: <div> como contenedor de bloque genérico -->
+			<!-- <div> no tiene valor semántico propio; se usa cuando ningún      -->
+			<!-- elemento semántico (section, article, aside...) aplica          -->
+			<section>
+				<h2>El elemento &lt;div&gt; - Contenedor de bloque</h2>
+				<p>
+					Los elementos DIV y SPAN, junto con los atributos <strong>id</strong> y <strong>class</strong>,
+					ofrecen un mecanismo genérico para añadir estructura a los documentos.
+				</p>
+				<p>
+					Estos elementos especifican si su contenido es en línea (<strong>SPAN</strong>)
+					o en bloque (<strong>DIV</strong>),
+					pero no imponen ningún otro estilo de presentación al contenido.
+				</p>
+				<p>
+					Así, los autores pueden usar estos elementos junto con hojas de estilo,
+					el atributo <strong>lang</strong>, etc., para adaptar el HTML a sus propios gustos y necesidades.
+				</p>
+				<!-- Ejemplo práctico: párrafo envuelto en <div> para agrupación -->
+				<div>
+					<p>Este párrafo está dentro de un &lt;div&gt;. El DIV es un contenedor de bloque: ocupa todo el ancho disponible y genera salto de línea antes y después.</p>
+				</div>
+			</section>
+
+			<hr>
+
+			<!-- Sección 2: <span> como contenedor en línea genérico -->
+			<!-- <span> no interrumpe el flujo del texto; ideal para marcar      -->
+			<!-- fragmentos de texto a los que se aplicará estilo o id          -->
+			<section>
+				<h2>El elemento &lt;span&gt; - Contenedor en línea</h2>
+				<p>
+					A diferencia del DIV, el SPAN es un contenedor <span>en línea</span>:
+					no genera salto de línea y solo ocupa el espacio de su contenido.
+					Es útil para aplicar estilos o identificar partes específicas de un texto.
+				</p>
+			</section>
+
+			<hr>
+
+			<!-- Sección 3: comportamiento de bloque del <div> en el flujo del documento -->
+			<section>
+				<h2>Comportamiento después del &lt;div&gt;</h2>
+				<p>Texto añadido después del tag DIV. Produce salto de línea pero no deja una línea en blanco adicional.</p>
+			</section>
+		</main>
+		<!-- ========================= PIE DE PÁGINA ========================= -->
+		<footer>
+			<p>Derechos reservados &copy; 2024 &mdash; UTN</p>
+		</footer>
+	</body>
+</html>

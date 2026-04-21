@@ -1,0 +1,94 @@
+<!--
+  @file        animacion1.html
+  @description Animación CSS3 con sintaxis abreviada: uso de la propiedad
+               shorthand `animation` y definición de fotogramas clave
+               mediante la regla `@keyframes`. La animación mueve un div
+               por las cuatro esquinas del contenedor mientras cambia de color.
+  @subject     Programación III – UTN
+  @topic       Clase 02 – Introducción a CSS
+  @author      UTN-FRA
+  @version     1.0.0
+  @since       2026
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Codificación de caracteres: permite el uso de tildes y ñ -->
+    <meta charset="UTF-8">
+    <!-- Viewport responsivo: ajusta el ancho al dispositivo con zoom inicial 1:1 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS – Animación con @keyframes</title>
+    <!-- Ícono de la pestaña del navegador -->
+    <link href="./img/utnLogo.png" rel="icon" type="image/png" />
+
+    <style>
+        /*
+          Elemento animado:
+          - animation: <nombre> <duración> <timing> <retardo> <iteraciones> <dirección>
+          - linear         : velocidad constante
+          - 2s de retardo  : espera 2 segundos antes de iniciar
+          - infinite       : repite indefinidamente
+          - alternate      : alterna la dirección en cada ciclo (ida y vuelta)
+        */
+        div {
+          width: 100px;
+          height: 100px;
+          background-color: red;
+          position: relative;
+          animation: mi-animacion 20s linear 2s infinite alternate;
+        }
+
+        /*
+          @keyframes mi-animacion
+          Define los fotogramas clave de la animación en porcentajes del ciclo:
+          - 0%  : inicio – rojo, esquina superior izquierda
+          - 25% : amarillo, esquina superior derecha
+          - 50% : azul, esquina inferior derecha
+          - 75% : verde, esquina inferior izquierda
+          - 100%: vuelve al estado inicial
+        */
+        @keyframes mi-animacion {
+          0%   {background-color:red;    left:0px;   top:0px;}
+          25%  {background-color:yellow; left:400px; top:0px;}
+          50%  {background-color:blue;   left:400px; top:200px;}
+          75%  {background-color:green;  left:0px;   top:200px;}
+          100% {background-color:red;    left:0px;   top:0px;}
+        }
+    </style>
+</head>
+<body>
+    <!-- ==================== ENCABEZADO DEL DOCUMENTO ==================== -->
+    <header>
+        <h1>Animación con <code>@keyframes</code> – Sintaxis abreviada</h1>
+    </header>
+    <!-- ========================= CONTENIDO PRINCIPAL ========================= -->
+    <main>
+        <!-- Sección 1: sintaxis de @keyframes -->
+        <section>
+            <h2>Sintaxis de <code>@keyframes</code></h2>
+            <!-- Bloque <pre> preserva el espaciado para mostrar código formateado -->
+            <pre>
+@keyframes identificador {
+    [ from | to | porcentaje% ]
+    [, from | to | porcentaje% ]* {
+        /* propiedades CSS */
+    }
+}</pre>
+        </section>
+
+        <hr>
+
+        <!-- Sección 2: demostración del elemento animado -->
+        <section>
+            <h2>Demostración</h2>
+            <p>El cuadrado de abajo recorre las cuatro esquinas y cambia de color en cada fotograma clave.</p>
+            <!-- Elemento div animado con la regla mi-animacion -->
+            <div></div>
+        </section>
+    </main>
+    <!-- ========================= PIE DE PÁGINA ========================= -->
+    <footer>
+        <p>Derechos reservados &copy; 2026 &mdash; UTN</p>
+    </footer>
+</body>
+</html>

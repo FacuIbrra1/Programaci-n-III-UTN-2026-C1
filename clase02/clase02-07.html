@@ -1,0 +1,97 @@
+<!--
+  @file        clase02-07.html
+  @description Media Queries en CSS3: reglas @media para aplicar estilos
+               según el ancho del viewport (min-width) y la orientación
+               del dispositivo (orientation: landscape / portrait).
+  @subject     Programación III – UTN
+  @topic       Clase 02 – Introducción a CSS
+  @author      UTN-FRA
+  @version     1.0.0
+  @since       2026
+-->
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<!-- Codificación de caracteres: permite el uso de tildes y ñ -->
+		<meta charset="UTF-8">
+		<!-- Viewport responsivo: ajusta el ancho al dispositivo con zoom inicial 1:1 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>CSS – Media Queries</title>
+		<!-- Ícono de la pestaña del navegador -->
+		<link href="./img/utnLogo.png" rel="icon" type="image/png" />
+
+		<style type="text/css">
+			/*
+			  @media (min-width: 360px)
+			  Aplica cuando el viewport tiene al menos 360px de ancho (móvil pequeño).
+			  El fondo se vuelve rojo.
+			*/
+			@media (min-width:360px) {
+				body {
+					background-color: red;
+				}
+			}
+
+			/*
+			  @media (min-width: 500px)
+			  Aplica cuando el viewport tiene al menos 500px de ancho (tableta o escritorio).
+			  Sobreescribe la regla anterior: el fondo se vuelve azul.
+			*/
+			@media (min-width:500px) {
+				body {
+					background-color: blue;
+				}
+			}
+
+			/*
+			  @media (orientation: landscape)
+			  Aplica cuando el dispositivo está en modo horizontal (ancho > alto).
+			  El fondo se vuelve verde sin importar el tamaño en píxeles.
+			*/
+			@media (orientation:landscape) {
+				body {
+					background-color: green;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<!-- ==================== ENCABEZADO DEL DOCUMENTO ==================== -->
+		<header>
+			<h1>Media Queries en CSS3</h1>
+			<nav>
+				<ul>
+					<li><a href="./index.html">Índice</a></li>
+					<li><a href="./clase02-06.html">Viewport</a></li>
+					<li><a href="./clase02-08.html">Flexbox</a></li>
+				</ul>
+			</nav>
+		</header>
+		<!-- ========================= CONTENIDO PRINCIPAL ========================= -->
+		<main>
+			<!-- Sección 1: descripción de media queries -->
+			<section>
+				<h2>¿Qué son las Media Queries?</h2>
+				<p>Las <strong>Media Queries</strong> permiten aplicar reglas CSS condicionalmente según las características del dispositivo: ancho, alto, orientación, resolución, etc.</p>
+				<p>Son la base del diseño responsivo (<em>Responsive Web Design</em>).</p>
+			</section>
+
+			<hr>
+
+			<!-- Sección 2: demostración – cambiar el tamaño de la ventana para ver el efecto -->
+			<section>
+				<h2>Demostración</h2>
+				<p>Redimensiona la ventana del navegador o rota el dispositivo para observar cómo cambia el color de fondo según cada regla <code>@media</code>.</p>
+				<ul>
+					<li>Ancho &ge; 360px &rarr; fondo <strong>rojo</strong></li>
+					<li>Ancho &ge; 500px &rarr; fondo <strong>azul</strong></li>
+					<li>Orientación horizontal &rarr; fondo <strong>verde</strong></li>
+				</ul>
+			</section>
+		</main>
+		<!-- ========================= PIE DE PÁGINA ========================= -->
+		<footer>
+			<p>Derechos reservados &copy; 2026 &mdash; UTN</p>
+		</footer>
+	</body>
+</html>

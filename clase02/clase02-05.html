@@ -1,0 +1,99 @@
+<!--
+  @file        clase02-05.html
+  @description Selectores descendentes en CSS: combinación de elemento y clase
+               dentro de un contexto ancestro (p span.colorado), y selector
+               descendente con ID y elemento (ul#listado li).
+  @subject     Programación III – UTN
+  @topic       Clase 02 – Introducción a CSS
+  @author      UTN-FRA
+  @version     1.0.0
+  @since       2026
+-->
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<!-- Codificación de caracteres: permite el uso de tildes y ñ -->
+		<meta charset="UTF-8">
+		<!-- Viewport responsivo: ajusta el ancho al dispositivo con zoom inicial 1:1 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>CSS – Selectores Descendentes</title>
+		<!-- Ícono de la pestaña del navegador -->
+		<link href="./img/utnLogo.png" rel="icon" type="image/png" />
+
+		<style type="text/css">
+			/*
+			  Selector descendente: p span.colorado
+			  Solo aplica a los <span class="colorado"> que son descendientes de un <p>.
+			  Un span.colorado fuera de un <p> NO será afectado.
+			*/
+			p span.colorado {
+			  color: rgb(250, 3, 3);
+			}
+
+			/*
+			  Selector descendente con ID: ul#listado li
+			  Solo aplica a los <li> dentro del <ul> con id="listado".
+			  Los <li> de otras listas no son afectados.
+			*/
+			ul#listado li {
+				font-style: oblique;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- ==================== ENCABEZADO DEL DOCUMENTO ==================== -->
+		<header>
+			<h1>Selectores Descendentes en CSS</h1>
+			<nav>
+				<ul>
+					<li><a href="./index.html">Índice</a></li>
+					<li><a href="./clase02-04.html">Combinando Clases</a></li>
+					<li><a href="./clase02-06.html">Viewport</a></li>
+				</ul>
+			</nav>
+		</header>
+		<!-- ========================= CONTENIDO PRINCIPAL ========================= -->
+		<main>
+			<!-- Sección 1: selector descendente p span.colorado -->
+			<section>
+				<h2>Selector descendente <code>p span.colorado</code></h2>
+				<p>El selector <strong>p span.colorado</strong> aplica únicamente a spans con clase <em>colorado</em> que estén dentro de un párrafo. El span fuera del párrafo no se ve afectado.</p>
+				<!-- span.colorado DENTRO del p: sí recibe el estilo rojo -->
+				<p>
+					Este párrafo contiene selectores descendientes.<br>
+					<span>Span sin clase (no afectado)</span><br>
+					Más texto con <span class="colorado">span.colorado dentro del p (color rojo)</span><br>
+					<span>Otro span sin clase</span>
+				</p>
+				<!-- span.colorado FUERA del p: NO recibe el estilo -->
+				<p>Texto fuera del párrafo con</p> <span class="colorado">span.colorado fuera del p (no afectado)</span>
+			</section>
+
+			<hr>
+
+			<!-- Sección 2: selector descendente ul#listado li -->
+			<section>
+				<h2>Selector descendente <code>ul#listado li</code></h2>
+				<p>El selector <strong>ul#listado li</strong> aplica solo a los ítems del listado identificado. La lista sin id no es afectada.</p>
+				<!-- Lista CON id="listado": los li reciben estilo oblicuo -->
+				<p>Listado con estilos (<code>id="listado"</code>):</p>
+				<ul id="listado">
+					<li>Primer ítem</li>
+					<li>Segundo ítem</li>
+					<li>Tercer ítem</li>
+				</ul>
+				<!-- Lista SIN id: los li NO reciben el estilo -->
+				<p>Listado sin estilos (sin id):</p>
+				<ul>
+					<li>Primer ítem</li>
+					<li>Segundo ítem</li>
+					<li>Tercer ítem</li>
+				</ul>
+			</section>
+		</main>
+		<!-- ========================= PIE DE PÁGINA ========================= -->
+		<footer>
+			<p>Derechos reservados &copy; 2026 &mdash; UTN</p>
+		</footer>
+	</body>
+</html>

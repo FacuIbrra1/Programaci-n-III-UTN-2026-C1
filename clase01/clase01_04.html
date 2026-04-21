@@ -1,0 +1,97 @@
+<!--
+  @file        clase01_04.html
+  @description Multimedia en HTML5: incrustación de audio (<audio>),
+               video (<video>) y contenido externo mediante marcos (<iframe>).
+               Incluye uso de anclas de navegación interna con atributo id.
+  @subject     Programación III – UTN
+  @topic       Clase 01 – Introducción a HTML5
+  @author      UTN-FRA
+  @version     1.0.0
+  @since       2026
+-->
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- Codificación de caracteres: permite el uso de tildes y ñ -->
+        <meta charset="UTF-8">
+        <!-- Compatibilidad con Internet Explorer (modo de documento más reciente) -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Viewport responsivo: ajusta el ancho al dispositivo con zoom inicial 1:1 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Audio, Video e iFrame</title>
+    </head>
+    <body>
+        <!-- ==================== ENCABEZADO DEL DOCUMENTO ==================== -->
+        <header>
+            <h1>Audio, Video e iFrame</h1>
+            <nav>
+                <ul>
+                    <li><a href="./index.html">Índice</a></li>
+                    <li><a href="./clase01_03.html">Imágenes</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- ========================= CONTENIDO PRINCIPAL ========================= -->
+        <main>
+            <!-- Ancla de navegación interna: id="principio" permite volver desde el final -->
+            <p id="principio"><a href="#final">Ir al final de la página</a></p>
+
+            <hr>
+
+            <!-- Sección 1: elemento <audio> con múltiples fuentes como fallback -->
+            <!-- Se proveen formatos .ogg y .mp3 para cubrir distintos navegadores -->
+            <section>
+                <h2>Audio con &lt;audio&gt;</h2>
+                <p>El elemento &lt;audio&gt; permite incrustar sonido en el documento. Se pueden ofrecer múltiples formatos como fallback.</p>
+                <audio controls>
+                    <source src="./media/horse.ogg" type="audio/ogg">
+                    <source src="./media/horse.mp3" type="audio/mpeg">
+                    <p>Tu navegador no soporta el elemento &lt;audio&gt;.</p>
+                </audio>
+            </section>
+
+            <hr>
+
+            <!-- Sección 2: elemento <video> con source en formato MP4 -->
+            <section>
+                <h2>Video con &lt;video&gt;</h2>
+                <p>El elemento &lt;video&gt; permite incrustar video directamente en el documento HTML5.</p>
+                <video width="320" height="240" controls>
+                    <source src="./media/vueltaOlimpica.mp4" type="video/mp4">
+                    <p>Tu navegador no soporta el elemento &lt;video&gt;.</p>
+                </video>
+            </section>
+
+            <hr>
+
+            <!-- Sección 3: elemento <iframe> para incrustar contenido de YouTube -->
+            <!-- frameborder="0": sin borde; allowfullscreen: habilita pantalla completa -->
+            <section>
+                <h2>Video externo con &lt;iframe&gt;</h2>
+                <p>El elemento &lt;iframe&gt; permite incrustar contenido de otras páginas, como videos de YouTube.</p>
+                <iframe width="420" height="345" src="https://www.youtube.com/embed/KO1davV3lXk"
+                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    title="Video de YouTube">
+                </iframe>
+            </section>
+
+            <hr>
+
+            <!-- Ancla de navegación interna: id="final" es el destino del enlace superior -->
+            <p id="final">Este es el final de la página.</p>
+
+            <p>
+                <a href="http://www.google.com.ar" target="_blank">Ir a Google</a>
+            </p>
+
+            <p>
+                <a href="#principio">Volver al principio</a>
+            </p>
+        </main>
+        <!-- ========================= PIE DE PÁGINA ========================= -->
+        <footer>
+            <p>Derechos reservados &copy; 2024 &mdash; UTN</p>
+        </footer>
+    </body>
+</html>

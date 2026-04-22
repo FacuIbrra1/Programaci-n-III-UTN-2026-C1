@@ -1,0 +1,341 @@
+<!--
+  @file        index.html
+  @description Página de índice y navegación de la Clase 03 – Introducción a
+               JavaScript. Presenta una grilla de tarjetas con los 4 archivos
+               JS de la clase e incluye una barra de búsqueda en tiempo real
+               implementada con JavaScript puro (sin frameworks).
+  @subject     Programación III – UTN
+  @topic       Clase 03 – Introducción a JavaScript
+  @author      UTN-FRA
+  @version     1.0.0
+  @since       2026
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Codificación de caracteres: permite el uso de tildes y ñ -->
+    <meta charset="UTF-8">
+    <!-- Viewport responsivo: ajusta el ancho al dispositivo con zoom inicial 1:1 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Descripción breve utilizada por motores de búsqueda (SEO) -->
+    <meta name="description" content="Índice de archivos de la Clase 03 – Introducción a JavaScript – UTN Programación III">
+    <title>Clase 03 – Índice JavaScript</title>
+
+    <style>
+        /* ==========================================================================
+           ESTILOS GLOBALES
+           ========================================================================== */
+
+        /* Reset de modelo de caja: incluye padding y border dentro del width/height */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Layout de página completa con flexbox para fijar el footer al fondo */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #1a202c;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ==========================================================================
+           ENCABEZADO
+           ========================================================================== */
+
+        header {
+            background-color: #2b4c7e;
+            color: #fff;
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            letter-spacing: 0.05em;
+        }
+
+        header p.subtitle {
+            margin-top: 0.5rem;
+            font-size: 1rem;
+            opacity: 0.85;
+        }
+
+        /* ==========================================================================
+           NAVEGACIÓN DEL ENCABEZADO
+           ========================================================================== */
+
+        header nav {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        header nav a {
+            color: #bee3f8;
+            text-decoration: none;
+            font-size: 0.9rem;
+            border: 1px solid #bee3f8;
+            border-radius: 4px;
+            padding: 0.3rem 0.75rem;
+        }
+
+        header nav a:hover {
+            background-color: #bee3f8;
+            color: #2b4c7e;
+        }
+
+        /* ==========================================================================
+           CONTENIDO PRINCIPAL
+           ========================================================================== */
+
+        main {
+            flex: 1;
+            max-width: 960px;
+            width: 100%;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ==========================================================================
+           BARRA DE BÚSQUEDA
+           ========================================================================== */
+
+        .search-bar {
+            margin-bottom: 1.75rem;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 0.65rem 1rem;
+            font-size: 0.95rem;
+            border: 1px solid #cbd5e0;
+            border-radius: 8px;
+            outline: none;
+            background-color: #fff;
+            color: #1a202c;
+        }
+
+        .search-bar input:focus {
+            border-color: #2b4c7e;
+            box-shadow: 0 0 0 3px rgba(43, 76, 126, 0.15);
+        }
+
+        /* ==========================================================================
+           SUBTÍTULO DE SECCIÓN
+           ========================================================================== */
+
+        main > h2 {
+            font-size: 1.1rem;
+            color: #4a5568;
+            margin-bottom: 1.25rem;
+            border-left: 4px solid #2b4c7e;
+            padding-left: 0.75rem;
+        }
+
+        /* ==========================================================================
+           GRILLA DE TARJETAS
+           ========================================================================== */
+
+        /* Grilla responsiva: columnas de mínimo 220px, se ajustan automáticamente */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.25rem;
+        }
+
+        /* Tarjeta individual */
+        .card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            padding: 1.4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Tarjeta oculta por el filtro de búsqueda (toggled via JS) */
+        .card.hidden {
+            display: none;
+        }
+
+        /* Número / código del archivo */
+        .card-number {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #2b4c7e;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        /* Título de la tarjeta */
+        .card h2 {
+            font-size: 1rem;
+            color: #2d3748;
+            line-height: 1.3;
+        }
+
+        /* Descripción breve */
+        .card p {
+            font-size: 0.82rem;
+            color: #718096;
+            flex: 1;
+            line-height: 1.5;
+        }
+
+        /* Enlace de apertura del archivo */
+        .card a {
+            display: block;
+            background-color: #2b4c7e;
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 0;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .card a:hover {
+            background-color: #1a365d;
+        }
+
+        /* Mensaje cuando ninguna tarjeta coincide con la búsqueda */
+        #no-results {
+            display: none;
+            text-align: center;
+            color: #718096;
+            font-size: 0.95rem;
+            padding: 2rem 0;
+        }
+
+        /* ==========================================================================
+           BOTÓN DE TARJETA
+           ========================================================================== */
+
+        /* Botón de cada tarjeta: abre la página de ejecución del script */
+        .btn-open {
+            display: block;
+            width: 100%;
+            background-color: #2b4c7e;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 0;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .btn-open:hover {
+            background-color: #1a365d;
+        }
+
+        /* ==========================================================================
+           PIE DE PÁGINA
+           ========================================================================== */
+
+        footer {
+            text-align: center;
+            padding: 1.25rem;
+            font-size: 0.8rem;
+            color: #a0aec0;
+            border-top: 1px solid #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== ENCABEZADO DEL DOCUMENTO ==================== -->
+    <header>
+        <h1>Programación III &mdash; UTN</h1>
+        <p class="subtitle">Clase 03 &middot; Introducción a JavaScript</p>
+        <nav>
+            <!-- Enlace de regreso al índice de la clase anterior -->
+            <a href="../clase02/index.html">← Clase 02</a>
+        </nav>
+    </header>
+
+    <!-- ========================= CONTENIDO PRINCIPAL ========================= -->
+    <main>
+
+        <!-- Barra de búsqueda: filtra las tarjetas por texto en tiempo real (via JS) -->
+        <div class="search-bar">
+            <input
+                type="search"
+                id="search-input"
+                placeholder="Buscar archivo o tema..."
+                aria-label="Buscar archivo JavaScript"
+            >
+        </div>
+
+        <h2>Archivos de la clase</h2>
+
+        <!-- Grilla de tarjetas: cada tarjeta representa un archivo JS de la clase -->
+        <div class="grid" id="cards-grid">
+
+            <!-- Archivo 01: tipos de datos y variables -->
+            <div class="card" data-keywords="01 datos variables var let const tipos primitivos plantillas literales template string number boolean symbol null undefined ámbito scope">
+                <span class="card-number">01</span>
+                <h2>Tipos de Datos y Variables</h2>
+                <p><code>var</code>, <code>let</code>, <code>const</code>, tipos primitivos, operadores <code>==</code> vs <code>===</code>, ámbito de bloque y plantillas literales (<em>template literals</em>).</p>
+                <button class="btn-open" onclick="openScript('01_datos.js', 'Tipos de Datos y Variables')">Ejecutar en consola</button>
+            </div>
+
+            <!-- Archivo 02: arrays -->
+            <div class="card" data-keywords="02 datos arrays arreglos forEach for push pop shift join indexOf includes métodos">
+                <span class="card-number">02</span>
+                <h2>Arrays</h2>
+                <p>Declaración, recorrido con <code>for</code> clásico y <code>forEach</code>, y métodos <code>push</code>, <code>pop</code>, <code>shift</code>, <code>join</code>, <code>indexOf</code> e <code>includes</code>.</p>
+                <button class="btn-open" onclick="openScript('02_datos.js', 'Arrays')">Ejecutar en consola</button>
+            </div>
+
+            <!-- Archivo 03: funciones -->
+            <div class="card" data-keywords="03 funciones parámetros opcionales predeterminados default rest primera clase first class hoisting">
+                <span class="card-number">03</span>
+                <h2>Funciones</h2>
+                <p>Declaración clásica, funciones como variables (<em>first-class</em>), parámetros opcionales, predeterminados (<code>default</code>) y rest (<code>...rest</code>).</p>
+                <button class="btn-open" onclick="openScript('03_funciones.js', 'Funciones')">Ejecutar en consola</button>
+            </div>
+
+            <!-- Archivo 04: fat arrow -->
+            <div class="card" data-keywords="04 fat arrow funciones flecha arrow function implicit return cuerpo bloque ternario ES6">
+                <span class="card-number">04</span>
+                <h2>Funciones Flecha</h2>
+                <p>Equivalencia entre <code>function expression</code> y <em>fat arrow</em> (<code>=&gt;</code>): cuerpo conciso con retorno implícito y cuerpo en bloque con <code>{}</code>.</p>
+                <button class="btn-open" onclick="openScript('04_fatArrow.js', 'Funciones Flecha')">Ejecutar en consola</button>
+            </div>
+
+        </div>
+
+        <!-- Mensaje mostrado cuando la búsqueda no encuentra resultados -->
+        <p id="no-results">No se encontraron archivos que coincidan con la búsqueda.</p>
+
+    </main>
+
+    <!-- ========================= PIE DE PÁGINA ========================= -->
+    <footer>
+        <p>UTN &mdash; Programación III &middot; Clase 03 &copy; 2026</p>
+    </footer>
+
+    <!-- Script externo: contiene openScript() y el filtro de búsqueda.
+         Se separó del HTML para evitar que el parser HTML interprete
+         los tags <script> y <style> generados dinámicamente dentro del JS. -->
+    <script src="./index.js"></script>
+
+</body>
+</html>

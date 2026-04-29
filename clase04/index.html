@@ -1,11 +1,11 @@
 <!--
   @file        index.html
-  @description Página de índice y navegación de la Clase 03 – Introducción a
-               JavaScript. Presenta una grilla de tarjetas con los 4 archivos
-               JS de la clase e incluye una barra de búsqueda en tiempo real
-               implementada con JavaScript puro (sin frameworks).
+  @description Página de índice y navegación de la Clase 04 – JSON, POO y
+               Métodos de Arrays. Presenta una grilla de tarjetas con los 6
+               archivos JS de la clase e incluye una barra de búsqueda en
+               tiempo real implementada con JavaScript puro (sin frameworks).
   @subject     Programación III – UTN
-  @topic       Clase 03 – Introducción a JavaScript
+  @topic       Clase 04 – JSON, POO y Métodos de Arrays
   @author      UTN-FRA
   @version     1.0.0
   @since       2026
@@ -18,8 +18,8 @@
     <!-- Viewport responsivo: ajusta el ancho al dispositivo con zoom inicial 1:1 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Descripción breve utilizada por motores de búsqueda (SEO) -->
-    <meta name="description" content="Índice de archivos de la Clase 03 – Introducción a JavaScript – UTN Programación III">
-    <title>Clase 03 – Índice JavaScript</title>
+    <meta name="description" content="Índice de archivos de la Clase 04 – JSON, POO y Métodos de Arrays – UTN Programación III">
+    <title>Clase 04 – JSON, POO y Métodos de Arrays</title>
 
     <style>
         /* ==========================================================================
@@ -48,7 +48,7 @@
            ========================================================================== */
 
         header {
-            background-color: #2b4c7e;
+            background-color: #553c9a;
             color: #fff;
             padding: 2rem 1.5rem;
             text-align: center;
@@ -78,17 +78,17 @@
         }
 
         header nav a {
-            color: #bee3f8;
+            color: #e9d8fd;
             text-decoration: none;
             font-size: 0.9rem;
-            border: 1px solid #bee3f8;
+            border: 1px solid #e9d8fd;
             border-radius: 4px;
             padding: 0.3rem 0.75rem;
         }
 
         header nav a:hover {
-            background-color: #bee3f8;
-            color: #2b4c7e;
+            background-color: #e9d8fd;
+            color: #553c9a;
         }
 
         /* ==========================================================================
@@ -123,8 +123,8 @@
         }
 
         .search-bar input:focus {
-            border-color: #2b4c7e;
-            box-shadow: 0 0 0 3px rgba(43, 76, 126, 0.15);
+            border-color: #553c9a;
+            box-shadow: 0 0 0 3px rgba(85, 60, 154, 0.15);
         }
 
         /* ==========================================================================
@@ -135,7 +135,7 @@
             font-size: 1.1rem;
             color: #4a5568;
             margin-bottom: 1.25rem;
-            border-left: 4px solid #2b4c7e;
+            border-left: 4px solid #553c9a;
             padding-left: 0.75rem;
         }
 
@@ -176,7 +176,7 @@
         .card-number {
             font-size: 0.75rem;
             font-weight: 700;
-            color: #2b4c7e;
+            color: #553c9a;
             letter-spacing: 0.08em;
             text-transform: uppercase;
         }
@@ -196,32 +196,6 @@
             line-height: 1.5;
         }
 
-        /* Enlace de apertura del archivo */
-        .card a {
-            display: block;
-            background-color: #2b4c7e;
-            color: #fff;
-            text-decoration: none;
-            padding: 0.5rem 0;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-align: center;
-        }
-
-        .card a:hover {
-            background-color: #1a365d;
-        }
-
-        /* Mensaje cuando ninguna tarjeta coincide con la búsqueda */
-        #no-results {
-            display: none;
-            text-align: center;
-            color: #718096;
-            font-size: 0.95rem;
-            padding: 2rem 0;
-        }
-
         /* ==========================================================================
            BOTÓN DE TARJETA
            ========================================================================== */
@@ -230,7 +204,7 @@
         .btn-open {
             display: block;
             width: 100%;
-            background-color: #2b4c7e;
+            background-color: #553c9a;
             color: #fff;
             border: none;
             padding: 0.5rem 0;
@@ -242,7 +216,16 @@
         }
 
         .btn-open:hover {
-            background-color: #1a365d;
+            background-color: #44337a;
+        }
+
+        /* Mensaje cuando ninguna tarjeta coincide con la búsqueda */
+        #no-results {
+            display: none;
+            text-align: center;
+            color: #718096;
+            font-size: 0.95rem;
+            padding: 2rem 0;
         }
 
         /* ==========================================================================
@@ -263,14 +246,12 @@
     <!-- ==================== ENCABEZADO DEL DOCUMENTO ==================== -->
     <header>
         <h1>Programación III &mdash; UTN</h1>
-        <p class="subtitle">Clase 03 &middot; Introducción a JavaScript</p>
+        <p class="subtitle">Clase 04 &middot; JSON, POO y Métodos de Arrays</p>
         <nav>
             <!-- Enlace al índice general del repositorio -->
             <a href="../index.html">⌂ Inicio</a>
             <!-- Enlace a la clase anterior -->
-            <a href="../clase02/index.html">← Clase 02</a>
-            <!-- Enlace a la clase siguiente -->
-            <a href="../clase04/index.html">Clase 04 →</a>
+            <a href="../clase03/index.html">← Clase 03</a>
         </nav>
     </header>
 
@@ -292,36 +273,52 @@
         <!-- Grilla de tarjetas: cada tarjeta representa un archivo JS de la clase -->
         <div class="grid" id="cards-grid">
 
-            <!-- Archivo 01: tipos de datos y variables -->
-            <div class="card" data-keywords="01 datos variables var let const tipos primitivos plantillas literales template string number boolean symbol null undefined ámbito scope">
+            <!-- Archivo 01: JSON y objetos -->
+            <div class="card" data-keywords="01 json objetos literales parse stringify propiedades punto corchetes delete this métodos">
                 <span class="card-number">01</span>
-                <h2>Tipos de Datos y Variables</h2>
-                <p><code>var</code>, <code>let</code>, <code>const</code>, tipos primitivos, operadores <code>==</code> vs <code>===</code>, ámbito de bloque y plantillas literales (<em>template literals</em>).</p>
-                <button class="btn-open" onclick="openScript('01_datos.js', 'Tipos de Datos y Variables')">Ejecutar en consola</button>
+                <h2>JSON y Objetos</h2>
+                <p>Objetos literales, notación de punto y corchetes, <code>JSON.parse()</code>, <code>JSON.stringify()</code>, propiedades dinámicas y métodos.</p>
+                <button class="btn-open" onclick="openScript('01_json.js', 'JSON y Objetos')">Ejecutar en consola</button>
             </div>
 
-            <!-- Archivo 02: arrays -->
-            <div class="card" data-keywords="02 datos arrays arreglos forEach for push pop shift join indexOf includes métodos">
+            <!-- Archivo 02: POO y clases -->
+            <div class="card" data-keywords="02 clases class constructor poo programacion orientada objetos privado publico getter setter static herencia extends super abstracta">
                 <span class="card-number">02</span>
-                <h2>Arrays</h2>
-                <p>Declaración, recorrido con <code>for</code> clásico y <code>forEach</code>, y métodos <code>push</code>, <code>pop</code>, <code>shift</code>, <code>join</code>, <code>indexOf</code> e <code>includes</code>.</p>
-                <button class="btn-open" onclick="openScript('02_datos.js', 'Arrays')">Ejecutar en consola</button>
+                <h2>Clases y POO</h2>
+                <p>Clases ES6+: <code>constructor</code>, propiedades privadas (<code>#</code>), <code>get</code>/<code>set</code>, miembros <code>static</code>, herencia con <code>extends</code> y <code>super</code>.</p>
+                <button class="btn-open" onclick="openScript('02_clases.js', 'Clases y POO')">Ejecutar en consola</button>
             </div>
 
-            <!-- Archivo 03: funciones -->
-            <div class="card" data-keywords="03 funciones parámetros opcionales predeterminados default rest primera clase first class hoisting">
+            <!-- Archivo 03: Array.map() -->
+            <div class="card" data-keywords="03 map array metodo transformar nuevo array función expresión fat arrow cuadrado productos nombres">
                 <span class="card-number">03</span>
-                <h2>Funciones</h2>
-                <p>Declaración clásica, funciones como variables (<em>first-class</em>), parámetros opcionales, predeterminados (<code>default</code>) y rest (<code>...rest</code>).</p>
-                <button class="btn-open" onclick="openScript('03_funciones.js', 'Funciones')">Ejecutar en consola</button>
+                <h2>Array.map()</h2>
+                <p>Transforma cada elemento de un array y retorna uno nuevo del mismo tamaño. Comparación con <code>for</code> clásico, <em>function expression</em> y fat arrow.</p>
+                <button class="btn-open" onclick="openScript('03_map.js', 'Array.map()')">Ejecutar en consola</button>
             </div>
 
-            <!-- Archivo 04: fat arrow -->
-            <div class="card" data-keywords="04 fat arrow funciones flecha arrow function implicit return cuerpo bloque ternario ES6">
+            <!-- Archivo 04: Array.filter() -->
+            <div class="card" data-keywords="04 filter array metodo filtrar condicion impares accesorios categoría seleccionar función flecha">
                 <span class="card-number">04</span>
-                <h2>Funciones Flecha</h2>
-                <p>Equivalencia entre <code>function expression</code> y <em>fat arrow</em> (<code>=&gt;</code>): cuerpo conciso con retorno implícito y cuerpo en bloque con <code>{}</code>.</p>
-                <button class="btn-open" onclick="openScript('04_fatArrow.js', 'Funciones Flecha')">Ejecutar en consola</button>
+                <h2>Array.filter()</h2>
+                <p>Selecciona elementos que cumplen una condición y retorna un nuevo array (puede ser más pequeño). Comparación con <code>for</code>, <em>function expression</em> y fat arrow.</p>
+                <button class="btn-open" onclick="openScript('04_filter.js', 'Array.filter()')">Ejecutar en consola</button>
+            </div>
+
+            <!-- Archivo 05: Array.reduce() -->
+            <div class="card" data-keywords="05 reduce array metodo acumular acumulador suma total stock valor inicial iteración">
+                <span class="card-number">05</span>
+                <h2>Array.reduce()</h2>
+                <p>Acumula todos los elementos en un único valor. Visualización del acumulador paso a paso. Comparación con <code>for</code>, <em>function expression</em> y fat arrow.</p>
+                <button class="btn-open" onclick="openScript('05_reduce.js', 'Array.reduce()')">Ejecutar en consola</button>
+            </div>
+
+            <!-- Archivo 06: Ejemplo integrador -->
+            <div class="card" data-keywords="06 ejemplo integrador iife map filter reduce encadenamiento chaining usuarios sexo edad nombres">
+                <span class="card-number">06</span>
+                <h2>Ejemplo Integrador</h2>
+                <p>IIFE como fuente de datos. Uso combinado y encadenado de <code>map()</code>, <code>filter()</code> y <code>reduce()</code> sobre un array de objetos.</p>
+                <button class="btn-open" onclick="openScript('06_ejemplo.js', 'Ejemplo Integrador')">Ejecutar en consola</button>
             </div>
 
         </div>
@@ -333,7 +330,7 @@
 
     <!-- ========================= PIE DE PÁGINA ========================= -->
     <footer>
-        <p>UTN &mdash; Programación III &middot; Clase 03 &copy; 2026</p>
+        <p>UTN &mdash; Programación III &middot; Clase 04 &copy; 2026</p>
     </footer>
 
     <!-- Script externo: contiene openScript() y el filtro de búsqueda.

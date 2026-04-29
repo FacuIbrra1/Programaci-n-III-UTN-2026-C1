@@ -34,16 +34,18 @@ console.log(f2(2)); // 4
 // es equivalente a un if-else de una sola expresión
 const f3 = function () {
     let algo    = 3;
-    let mensaje = algo % 2 ? "es par" : "es impar"; // 3 % 2 = 1 (truthy) → "es par"
+    let mensaje = algo % 2 ? "es impar" : "es par"; // 3 % 2 = 1 (truthy) → "es impar"
     console.log(mensaje);
 };
+
 f3();
 
 // Forma 4: función flecha con cuerpo en bloque
 // Cuando hay varias sentencias se usan llaves; el return debe ser explícito si se necesita
 const f4 = () => {
     let algo    = 3;
-    let mensaje = algo % 2 ? "es par" : "es impar";
+    let mensaje = algo % 2 ? "es impar" : "es par";
     console.log(mensaje);
 };
+
 f4();

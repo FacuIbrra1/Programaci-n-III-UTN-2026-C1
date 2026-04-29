@@ -13,7 +13,7 @@ Repositorio de clases y ejemplos prácticos de la materia **Programación III** 
 | [Clase 01](./clase01/index.html) | Introducción a HTML5 | ✅ Disponible |
 | [Clase 02](./clase02/index.html) | Introducción a CSS3 | ✅ Disponible |
 | [Clase 03](./clase03/index.html) | Introducción a JavaScript | ✅ Disponible |
-| Clase 04 | JSON, POO y Métodos de Arrays | 🔧 En desarrollo |
+| [Clase 04](./clase04/index.html) | JSON, POO y Métodos de Arrays | ✅ Disponible |
 | Clase 05 | Formularios, DOM, Selectores y Eventos | 🔧 En desarrollo |
 | Clase 06 | HTTP, AJAX y XMLHttpRequest | 🔧 En desarrollo |
 | Clase 07 | fetch, Promesas, async/await y CORS | 🔧 En desarrollo |
@@ -76,11 +76,17 @@ Variables, tipos de datos, estructuras y funciones en JavaScript ES6+.
 
 ---
 
-### 🔧 Clase 04 – JSON, POO y Métodos de Arrays *(próximamente)*
+### ✅ Clase 04 – JSON, POO y Métodos de Arrays
 
-- Formato JSON: sintaxis, `JSON.parse()` y `JSON.stringify()`
-- Programación Orientada a Objetos: clases, constructores, herencia y encapsulamiento
-- Métodos de arrays: `map()`, `filter()`, `reduce()`, `find()`, `some()`, `every()`
+Objetos JSON, Programación Orientada a Objetos con clases ES6+ y métodos funcionales de arrays.
+
+**Archivos:**
+- `01_json.js` – Objetos literales, notación de punto/corchetes, `JSON.parse()`, `JSON.stringify()`, arrays de objetos y métodos
+- `02_clases.js` – Clases: `constructor`, propiedades privadas (`#`), `get`/`set`, `static`, herencia con `extends`/`super` y clases abstractas
+- `03_map.js` – `Array.map()`: transformación de cada elemento; comparación con `for`, function expression y fat arrow
+- `04_filter.js` – `Array.filter()`: selección por condición; comparación con `for`, function expression y fat arrow
+- `05_reduce.js` – `Array.reduce()`: acumulación en un único valor; visualización del acumulador paso a paso
+- `06_ejemplo.js` – Ejemplo integrador: IIFE como fuente de datos, encadenamiento `filter().map()` y `reduce()`
 
 ---
 

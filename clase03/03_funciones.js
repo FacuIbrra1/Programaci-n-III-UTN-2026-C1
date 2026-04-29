@@ -47,6 +47,7 @@ console.log(miFuncion(5, 4));    // 9
 const miVariable = function () {
     console.log("hola");
 };
+
 miVariable(); // "hola"
 
 // despedir() no devuelve nada → varDespedir = undefined
@@ -77,8 +78,8 @@ function nombreApellido(nombre, apellido) {
     }
 }
 
-let nombre     = nombreApellido("Juan", "Perez"); // "Juan  Perez"
-let otroNombre = nombreApellido("Juan");          // "Juan"
+let nombre        = nombreApellido("Juan", "Perez"); // "Juan  Perez"
+let otroNombre    = nombreApellido("Juan");          // "Juan"
 
 console.log(nombre);
 console.log(otroNombre);

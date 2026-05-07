@@ -14,7 +14,7 @@ Repositorio de clases y ejemplos prácticos de la materia **Programación III** 
 | [Clase 02](./clase02/index.html) | Introducción a CSS3 | ✅ Disponible |
 | [Clase 03](./clase03/index.html) | Introducción a JavaScript | ✅ Disponible |
 | [Clase 04](./clase04/index.html) | JSON, POO y Métodos de Arrays | ✅ Disponible |
-| Clase 05 | Formularios, DOM, Selectores y Eventos | 🔧 En desarrollo |
+| [Clase 05](./clase05/index.html) | Formularios, DOM, Selectores y Eventos | ✅ Disponible |
 | Clase 06 | HTTP, AJAX y XMLHttpRequest | 🔧 En desarrollo |
 | Clase 07 | fetch, Promesas, async/await y CORS | 🔧 En desarrollo |
 | Clase 08 | Bootstrap: grillas, Flexbox y clases utilitarias | 🔧 En desarrollo |
@@ -90,12 +90,23 @@ Objetos JSON, Programación Orientada a Objetos con clases ES6+ y métodos funci
 
 ---
 
-### 🔧 Clase 05 – Formularios, DOM, Selectores y Eventos *(próximamente)*
+### ✅ Clase 05 – Formularios, DOM, Selectores y Eventos
 
-- Formularios HTML y elementos asociados: `<input>`, `<select>`, `<textarea>`, validación
-- Document Object Model (DOM): árbol de nodos, acceso y modificación
-- Selectores: `getElementById`, `querySelector`, `querySelectorAll`
-- Eventos: `addEventListener`, propagación, delegación de eventos
+Formularios HTML5, manipulación del árbol DOM y manejo de eventos con JavaScript puro.
+
+**Archivos HTML:**
+- `clase05_01.html` – Formulario clásico: checkboxes, radio buttons, `select`/`optgroup`, `textarea`, reset/submit
+- `clase05_02.html` – Inputs HTML5: `color`, `date`, `month`, `email`, `number`, `range`, `time`, `url`, `week`, `datalist`
+- `clase05_03.html` – Página de prueba para `dom.js`
+- `clase05_04.html` – Página de prueba para `eventos.js`
+- `clase05_05.html` – Página de prueba para `eventos2.js`
+- `clase05_06.html` – Formulario con captura via `FormData` + `json.js`
+
+**Archivos JS (`js/`):**
+- `dom.js` – Selectores (`querySelector`, `querySelectorAll`), manipulación de contenido/estilos, `classList`, `createElement`, `removeChild`
+- `eventos.js` – Tres formas de manejar eventos: inline, referencia a función y `addEventListener` con `window.onload`
+- `eventos2.js` – `DOMContentLoaded`, `mouseover/mouseout`, lectura de inputs/select, modificación de estilos, `CambiarDatos()`
+- `json.js` – `FormData`, `Object.fromEntries()` y `e.preventDefault()` para captura de formularios sin recarga
 
 ---
 

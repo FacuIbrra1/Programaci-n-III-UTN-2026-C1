@@ -1,0 +1,46 @@
+<!--
+  @file        clase05_04.html
+  @description Página de prueba para las tres formas de manejar eventos
+               definidas en js/eventos.js:
+               1) onclick inline en el HTML (atributo)
+               2) onclick referenciando una función global
+               3) addEventListener desde JS (manejador semántico)
+  @subject     Programación III – UTN
+  @topic       Clase 05 – Formularios, DOM, Selectores y Eventos
+  @author      UTN-FRA
+  @version     1.0.0
+  @since       2026
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTOS</title>
+    		
+    <link href="./img/utnLogo.png" rel="icon" type="image/png" />
+    <script src="js/eventos.js"></script>
+
+</head>
+<body>
+
+    <input type="button" value="Mostrar" onclick="console.log('click desde atributo')">
+    <br>
+    <input type="button" value="Mostrar" onclick="mostrar()">
+    <br>
+    <input type="button" value="Mostrar" id="btnMostrar">
+    
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet voluptate aut earum blanditiis minima beatae ut praesentium exercitationem aliquam commodi. Explicabo ducimus aperiam velit maiores optio laboriosam, facilis laudantium illum!</p>
+    <p>Otro párrafo</p>
+    <p class="cursiva">Párrafo con clase</p>
+
+    <h3>Este es un título de nivel 3</h3>
+
+    <div>Este div es el primero</div>
+    <div class="cursiva">Div con clase</div>
+    <div id="divId">Div con id</div>
+
+    
+</body>
+</html>
